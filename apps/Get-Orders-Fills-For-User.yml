@@ -1,0 +1,3606 @@
+version: 43.0.9
+pageUuid: edf19a30-6501-11ed-8787-0bc81986c0c1
+appTemplate:
+  plugins:
+    ordered:
+      - query1:
+          pluginTemplate:
+            id: query1
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: "# GraphQL queries typically start with a \"{\" character. Lines that start\n# with a # are ignored.\n#\n# An example GraphQL query might look like:\n#\n#     {\n#       field(arg: \"value\") {\n#         subField\n#       }\n#     }\n#\n# Keyboard shortcuts:\n#\n#   Auto Complete:  Ctrl-Space (or just start typing)\n\nquery snapshot($userID: String!, $productTypeParam: RetailProductType, $statusParam: OrderExecutionStatus, $productID: String) {\n  orderSnapshot(input: { \n    userId: $userID,\n    productType: $productTypeParam\n    status:$statusParam\n    productId:$productID\n  }) {\n    snapshot {\n      orders {\n        orderId\n        clientOrderId\n        status\n        productType\n        filledSize\n        filledValue\n        quoteQuantityRemaining\n        baseQuantityRemaining\n        productId\n        totalFees\n        side\n        createdTime\n        orderConfiguration {\n          orderType\n          timeInForce\n          quoteSize\n          baseSize\n          limitPrice\n          endTime\n          postOnly\n      \t}\n      }\n    }\n  }\n}"
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userID","value":"{{ textInput5.value
+                    }}"},{"key":"productTypeParam","value":"{{ select3.value
+                    }}"},{"key":"statusParam","value":"{{select4.value}}"},{"key":"productID","value":"{{
+                    textInput6.value }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data.orderSnapshot.snapshot.orders.reduce((agg, row)
+                    => {
+                      row2 = {
+                        assetPair: row.productId,
+                        ...row, 
+                        ...row.orderConfiguration, 
+                        fee: row.totalFees,
+                      }
+                      delete row2.productId
+                      delete row2.orderConfiguration
+                      delete row2.totalFees
+                      agg.push(row2)
+                      return agg
+                    }, [])
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-11-15T15:00:57.563Z
+            updatedAt: 2023-10-26T16:04:26.805Z
+      - container1:
+          pluginTemplate:
+            id: container1
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                col: 1
+                height: 6
+                width: 11
+            createdAt: 2022-12-01T22:15:05.125Z
+            updatedAt: 2022-12-01T22:15:05.125Z
+      - containerTitle1:
+          pluginTemplate:
+            id: containerTitle1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get Open Orders for a User'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2022-12-01T22:15:06.214Z
+            updatedAt: 2022-12-01T22:22:38.578Z
+      - textInput5:
+          pluginTemplate:
+            id: textInput5
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: ''
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 123-26271-37383'
+                - label: User ID or UUID (accepts either, required)*
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:15:48.041Z
+            updatedAt: 2023-05-18T22:21:14.353Z
+      - select3:
+          pluginTemplate:
+            id: select3
+            type: widget
+            subtype: SelectWidget2
+            template:
+              ordered:
+                - imageByIndex:
+                    array: []
+                - _disabledByIndex: []
+                - showSelectionIndicator: true
+                - _values: []
+                - iconByIndex:
+                    array: []
+                - values: '{{ item }}'
+                - readOnly: false
+                - iconAfter: ''
+                - _iconByIndex: []
+                - overlayMinWidth: null
+                - allowDeselect: true
+                - inputValue: ''
+                - hidden: false
+                - customValidation: ''
+                - data: '[''UNKNOWN_PRODUCT_TYPE'', ''SPOT'', ''FUTURE'']'
+                - searchMode: fuzzy
+                - hideValidationMessage: false
+                - fallbackTextByIndex:
+                    array: []
+                - textBefore: ''
+                - _fallbackTextByIndex: []
+                - selectedItem: null
+                - validationMessage: ''
+                - automaticItemColors: false
+                - itemAdornmentShape: circle
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: UNKNOWN_PRODUCT_TYPE
+                - hiddenByIndex:
+                    array: []
+                - labelCaption: ''
+                - labelWidth: '33'
+                - deprecatedLabels: |-
+                    [  'ALL',
+                        'SPOT', 'FUTURE']
+                - _hiddenByIndex: []
+                - placeholder: Select an option
+                - _captionByIndex: []
+                - itemAdornmentSize: auto
+                - label: Product Type (optional)
+                - _hasMigratedNestedItems: true
+                - captionByIndex:
+                    array: []
+                - _validate: false
+                - itemMode: dynamic
+                - labelWidthUnit: '%'
+                - allowCustomValue: false
+                - invalid: false
+                - selectedIndex: null
+                - _tooltipByIndex: []
+                - _colorByIndex: []
+                - tooltipByIndex:
+                    array: []
+                - iconBefore: ''
+                - colorByIndex:
+                    array: []
+                - selectedLabel: ''
+                - events:
+                    ordered: []
+                - _ids: []
+                - emptyMessage: ''
+                - overlayMaxHeight: null
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - _labels: []
+                - labelWrap: false
+                - disabledValues:
+                    array: []
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - _imageByIndex: []
+                - required: false
+                - labels: '{{ self.deprecatedLabels[i] }}'
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 1
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:15:48.994Z
+            updatedAt: 2022-12-01T22:15:48.994Z
+      - select4:
+          pluginTemplate:
+            id: select4
+            type: widget
+            subtype: SelectWidget2
+            template:
+              ordered:
+                - imageByIndex:
+                    array: []
+                - _disabledByIndex: []
+                - showSelectionIndicator: true
+                - _values: []
+                - iconByIndex:
+                    array: []
+                - values: '{{ item }}'
+                - readOnly: false
+                - iconAfter: ''
+                - _iconByIndex: []
+                - overlayMinWidth: null
+                - allowDeselect: true
+                - inputValue: ''
+                - hidden: false
+                - customValidation: ''
+                - data: >-
+                    ['UNKNOWN_ORDER_STATUS', 'OPEN', 'FILLED', 'PENDING',
+                    'CANCELLED', 'EXPIRED']
+                - searchMode: fuzzy
+                - hideValidationMessage: false
+                - fallbackTextByIndex:
+                    array: []
+                - textBefore: ''
+                - _fallbackTextByIndex: []
+                - selectedItem: null
+                - validationMessage: ''
+                - automaticItemColors: false
+                - itemAdornmentShape: circle
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: OPEN
+                - hiddenByIndex:
+                    array: []
+                - labelCaption: ''
+                - labelWidth: '33'
+                - deprecatedLabels: |-
+                    [  'ALL',
+                        'OPEN', 'FILLED', 'PENDING', 'CANCELLED', 'EXPIRED']
+                - _hiddenByIndex: []
+                - placeholder: Select an option
+                - _captionByIndex: []
+                - itemAdornmentSize: auto
+                - label: Order Status (optional)
+                - _hasMigratedNestedItems: true
+                - captionByIndex:
+                    array: []
+                - _validate: false
+                - itemMode: dynamic
+                - labelWidthUnit: '%'
+                - allowCustomValue: false
+                - invalid: false
+                - selectedIndex: null
+                - _tooltipByIndex: []
+                - _colorByIndex: []
+                - tooltipByIndex:
+                    array: []
+                - iconBefore: ''
+                - colorByIndex:
+                    array: []
+                - selectedLabel: ''
+                - events:
+                    ordered: []
+                - _ids: []
+                - emptyMessage: ''
+                - overlayMaxHeight: null
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - _labels: []
+                - labelWrap: false
+                - disabledValues:
+                    array: []
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - _imageByIndex: []
+                - required: false
+                - labels: '{{ self.deprecatedLabels[i] }}'
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 2
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:15:49.774Z
+            updatedAt: 2022-12-01T22:15:49.774Z
+      - textInput6:
+          pluginTemplate:
+            id: textInput6
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: BTC-USD'
+                - label: Product ID (optional)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 3
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:15:50.627Z
+            updatedAt: 2022-12-01T22:15:50.627Z
+      - table2:
+          pluginTemplate:
+            id: table2
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - filledSize: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - fee: ''
+                      - content-encoding: ''
+                      - orderConfiguration: ''
+                      - endTime: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - x-frame-options: ''
+                      - assetPair: ''
+                      - productId: ''
+                      - content-security-policy: ''
+                      - postOnly: ''
+                      - content-type: ''
+                      - limitPrice: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - filledValue: ''
+                      - quoteQuantityRemaining: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - createdTime: ''
+                      - side: ''
+                      - timeInForce: ''
+                      - content-length: ''
+                      - baseQuantityRemaining: ''
+                      - quoteSize: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query1.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: false
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 5.800000000000001
+                height: 8
+                width: 12
+            createdAt: 2022-12-01T22:15:51.724Z
+            updatedAt: 2022-12-01T22:15:51.724Z
+      - button3:
+          pluginTemplate:
+            id: button3
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Order Snapshot
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: '{{ textInput5.value.value != ""}}'
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query1
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{textInput5.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 4.2
+                height: 1.2
+            createdAt: 2022-12-01T22:19:21.128Z
+            updatedAt: 2022-12-01T22:19:41.307Z
+      - container2:
+          pluginTemplate:
+            id: container2
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 16.4
+                col: 1
+                height: 6
+                width: 11
+            createdAt: 2022-12-01T22:24:20.782Z
+            updatedAt: 2022-12-01T22:24:20.782Z
+      - containerTitle2:
+          pluginTemplate:
+            id: containerTitle2
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get Order by Order ID'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2022-12-01T22:24:20.973Z
+            updatedAt: 2022-12-01T22:24:35.924Z
+      - text1:
+          pluginTemplate:
+            id: text1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    Search for a specific user's orders, by supplying orders in
+                    the text box below. If no orders are provided, all orders
+                    upto the default limit (1000) will be provided. If you'd
+                    like more than the 1000, please use the Snapshot tool in
+                    home.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                height: 0.6
+                width: 11
+            createdAt: 2022-12-01T22:24:24.635Z
+            updatedAt: 2022-12-01T22:24:24.635Z
+      - textInput7:
+          pluginTemplate:
+            id: textInput7
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: ''
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 123-26271-37383'
+                - label: |-
+                    User ID or UUID (accepts either, required
+                    )
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                row: 1.2
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:24:24.762Z
+            updatedAt: 2023-05-18T22:19:45.238Z
+      - textArea1:
+          pluginTemplate:
+            id: textArea1
+            type: widget
+            subtype: TextAreaWidget
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - autoResize: true
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - hideValidationMessage: false
+                - minLines: 2
+                - validationMessage: ''
+                - showInEditor: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: |-
+                    000-000-0000
+                    111-111-1111
+                    222-222-2222
+                - label: Order UUIDs (enter each on new line)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - maxLines: '100'
+                - loading: false
+                - disabled: false
+                - labelPosition: top
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                row: 2.2
+                height: 1
+                width: 4
+            createdAt: 2022-12-01T22:24:25.412Z
+            updatedAt: 2022-12-01T22:24:25.412Z
+      - button4:
+          pluginTemplate:
+            id: button4
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Orders by OrderIDs
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: ''
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query2
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{textInput7.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                row: 4.4
+                height: 1.2
+            createdAt: 2022-12-01T22:24:25.504Z
+            updatedAt: 2022-12-01T23:02:55.448Z
+      - table3:
+          pluginTemplate:
+            id: table3
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - filledSize: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - rejectReason: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - fee: ''
+                      - content-encoding: ''
+                      - stopPrice: ''
+                      - orderConfiguration: ''
+                      - endTime: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - x-frame-options: ''
+                      - assetPair: ''
+                      - productId: ''
+                      - averageFilledPrice: ''
+                      - content-security-policy: ''
+                      - postOnly: ''
+                      - content-type: ''
+                      - limitPrice: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - filledValue: ''
+                      - quoteQuantityRemaining: ''
+                      - sizeInclusiveOfFees: ''
+                      - numberOfFills: ''
+                      - pendingCancel: ''
+                      - totalFees: ''
+                      - outstandingHoldAmount: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - createdTime: ''
+                      - sizeInQuote: ''
+                      - completionPercentage: ''
+                      - side: ''
+                      - timeInForce: ''
+                      - content-length: ''
+                      - baseQuantityRemaining: ''
+                      - quoteSize: ''
+                      - stopDirection: ''
+                      - cancelReason: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - rejectReason: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - stopPrice: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - averageFilledPrice: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - sizeInclusiveOfFees: true
+                      - numberOfFills: true
+                      - pendingCancel: true
+                      - totalFees: true
+                      - outstandingHoldAmount: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - sizeInQuote: true
+                      - completionPercentage: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - stopDirection: true
+                      - cancelReason: true
+                      - clientOrderId: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - rejectReason: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - stopPrice: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - averageFilledPrice: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - sizeInclusiveOfFees: true
+                      - numberOfFills: true
+                      - pendingCancel: true
+                      - totalFees: true
+                      - outstandingHoldAmount: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - sizeInQuote: true
+                      - completionPercentage: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - stopDirection: true
+                      - cancelReason: true
+                      - clientOrderId: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query2.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - assetPair
+                    - clientOrderId
+                    - status
+                    - side
+                    - createdTime
+                    - fee
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - productType
+                    - filledValue
+                    - filledSize
+                    - numberOfFills
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - completionPercentage
+                    - averageFilledPrice
+                    - sizeInQuote
+                    - pendingCancel
+                    - sizeInclusiveOfFees
+                    - outstandingHoldAmount
+                    - cancelReason
+                    - rejectReason
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - assetPair
+                    - clientOrderId
+                    - status
+                    - side
+                    - createdTime
+                    - fee
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - productType
+                    - filledValue
+                    - filledSize
+                    - numberOfFills
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - completionPercentage
+                    - averageFilledPrice
+                    - sizeInQuote
+                    - pendingCancel
+                    - sizeInclusiveOfFees
+                    - outstandingHoldAmount
+                    - cancelReason
+                    - rejectReason
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                row: 5.8
+                height: 8
+                width: 11
+            createdAt: 2022-12-01T22:24:25.773Z
+            updatedAt: 2023-01-04T20:20:39.665Z
+      - query2:
+          pluginTemplate:
+            id: query2
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: "\nquery orders($userID: String!, $orderIDs: [String]) {\n   getRATOrders(input: {\n    userId: $userID,\n    orderIds: $orderIDs\n    cursor: \"\",\n    limit: 0,\n    productId: \"\"\n  }) {\n      orders {\n        orderId\n        clientOrderId\n        status\n        productType\n        filledSize\n        filledValue\n        quoteQuantityRemaining\n        baseQuantityRemaining\n        productId\n        totalFees\n        side\n        createdTime\n        orderConfiguration {\n          orderType\n          timeInForce\n          quoteSize\n          baseSize\n          limitPrice\n          endTime\n          postOnly\n      \t}\n        completionPercentage\n        averageFilledPrice\n        numberOfFills\n        sizeInQuote\n        pendingCancel\n        sizeInclusiveOfFees\n        outstandingHoldAmount\n        cancelReason\n        rejectReason\n      }\n    cursor\n    }\n}"
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userID","value":"{{ textInput7.value
+                    }}"},{"key":"orderIDs","value":"{{ textArea1.value != \"\" ?
+                    textArea1.value.split(\"\\n\") : [] }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data.getRATOrders.orders.reduce((agg, row) => {
+                      row2 = {
+                        assetPair: row.productId,
+                        fee: row.totalFees,
+                        ...row.orderConfiguration,
+                        ...row,  
+                      }
+                      delete row2.productId
+                      delete row2.orderConfiguration
+                      delete row2.totalFees
+                      agg.push(row2)
+                      return agg
+                    }, [])
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-12-01T22:26:10.989Z
+            updatedAt: 2023-10-26T16:04:15.147Z
+      - container3:
+          pluginTemplate:
+            id: container3
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 32.6
+                col: 1
+                height: 6
+                width: 11
+            createdAt: 2022-12-01T22:28:17.187Z
+            updatedAt: 2022-12-01T22:28:17.187Z
+      - containerTitle3:
+          pluginTemplate:
+            id: containerTitle3
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get Orders for User'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2022-12-01T22:28:17.411Z
+            updatedAt: 2022-12-01T22:52:49.727Z
+      - query3:
+          pluginTemplate:
+            id: query3
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: "\nquery orders($userID: String!, $cursor: String, $limit: Int, $statusParam: OrderExecutionStatus, $productID: String!) {\n   getRATOrders(input: {\n    userId: $userID,\n    cursor: $cursor,\n    limit: $limit,\n    status:$statusParam\n    productId:$productID\n  }) {\n      orders {\n        orderId\n        clientOrderId\n        status\n        productType\n        filledSize\n        filledValue\n        quoteQuantityRemaining\n        baseQuantityRemaining\n        productId\n        totalFees\n        side\n        createdTime\n        orderConfiguration {\n          orderType\n          timeInForce\n          quoteSize\n          baseSize\n          limitPrice\n          endTime\n          postOnly\n      \t}\n        completionPercentage\n        averageFilledPrice\n        numberOfFills\n        sizeInQuote\n        pendingCancel\n        sizeInclusiveOfFees\n        outstandingHoldAmount\n        cancelReason\n        rejectReason\n      }\n    cursor\n    }\n}"
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userID","value":"{{
+                    textInput8.value}}"},{"key":"cursor","value":""},{"key":"limit","value":"{{
+                    numberInput1.value}}"},{"key":"statusParam","value":"{{select5.value}}"},{"key":"productID","value":""}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return {data: data.getRATOrders.orders.reduce((agg, row) =>
+                    {
+                      row2 = {
+                        assetPair: row.productId,
+                        fee: row.totalFees,
+                        ...row.orderConfiguration,
+                        ...row,  
+                      }
+                      delete row2.productId
+                      delete row2.orderConfiguration
+                      delete row2.totalFees
+                      agg.push(row2)
+                      return agg
+                    }, []), cursor: data.getRATOrders.cursor}
+                - events:
+                    - ordered:
+                        - method: setValue
+                        - enabled: '{{ query3.data != undefined }}'
+                        - params:
+                            ordered:
+                              - key: next_cursor
+                              - newValue: '{{ query3.data.cursor}}'
+                        - targetId: null
+                        - pluginId: ''
+                        - waitType: debounce
+                        - event: success
+                        - type: localStorage
+                        - waitMs: '0'
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-12-01T22:28:28.897Z
+            updatedAt: 2023-10-26T16:04:32.660Z
+      - textInput8:
+          pluginTemplate:
+            id: textInput8
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: ''
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 123-26271-37383'
+                - label: |
+                    User ID or UUID (accepts either, required)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:29:09.843Z
+            updatedAt: 2023-05-18T22:20:14.184Z
+      - select5:
+          pluginTemplate:
+            id: select5
+            type: widget
+            subtype: SelectWidget2
+            template:
+              ordered:
+                - imageByIndex:
+                    array: []
+                - _disabledByIndex: []
+                - showSelectionIndicator: true
+                - _values: []
+                - iconByIndex:
+                    array: []
+                - values: '{{ item }}'
+                - readOnly: false
+                - iconAfter: ''
+                - _iconByIndex: []
+                - overlayMinWidth: null
+                - allowDeselect: true
+                - inputValue: ''
+                - hidden: false
+                - customValidation: ''
+                - data: >-
+                    ['UNKNOWN_ORDER_STATUS', 'OPEN', 'FILLED', 'PENDING',
+                    'CANCELLED', 'EXPIRED']
+                - searchMode: fuzzy
+                - hideValidationMessage: false
+                - fallbackTextByIndex:
+                    array: []
+                - textBefore: ''
+                - _fallbackTextByIndex: []
+                - selectedItem: null
+                - validationMessage: ''
+                - automaticItemColors: false
+                - itemAdornmentShape: circle
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: FILLED
+                - hiddenByIndex:
+                    array: []
+                - labelCaption: ''
+                - labelWidth: '33'
+                - deprecatedLabels: |-
+                    [  'ALL',
+                        'OPEN', 'FILLED', 'PENDING', 'CANCELLED', 'EXPIRED']
+                - _hiddenByIndex: []
+                - placeholder: Select an option
+                - _captionByIndex: []
+                - itemAdornmentSize: auto
+                - label: Order Status (optional)
+                - _hasMigratedNestedItems: true
+                - captionByIndex:
+                    array: []
+                - _validate: false
+                - itemMode: dynamic
+                - labelWidthUnit: '%'
+                - allowCustomValue: false
+                - invalid: false
+                - selectedIndex: null
+                - _tooltipByIndex: []
+                - _colorByIndex: []
+                - tooltipByIndex:
+                    array: []
+                - iconBefore: ''
+                - colorByIndex:
+                    array: []
+                - selectedLabel: ''
+                - events:
+                    ordered: []
+                - _ids: []
+                - emptyMessage: ''
+                - overlayMaxHeight: null
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - _labels: []
+                - labelWrap: false
+                - disabledValues:
+                    array: []
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - _imageByIndex: []
+                - required: false
+                - labels: '{{ self.deprecatedLabels[i] }}'
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 1
+                height: 1
+                width: 7
+            createdAt: 2022-12-01T22:29:10.485Z
+            updatedAt: 2022-12-01T22:29:10.485Z
+      - textInput9:
+          pluginTemplate:
+            id: textInput9
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: BTC-USD'
+                - label: Product ID (optional)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 2
+                height: 1
+                width: 7
+            createdAt: 2022-12-01T22:29:11.329Z
+            updatedAt: 2022-12-01T22:29:11.329Z
+      - numberInput1:
+          pluginTemplate:
+            id: numberInput1
+            type: widget
+            subtype: NumberInputWidget
+            template:
+              ordered:
+                - readOnly: false
+                - iconAfter: ''
+                - max: '1000'
+                - preventScroll: false
+                - inputValue: null
+                - hidden: false
+                - customValidation: ''
+                - showSeparators: true
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - allowNull: false
+                - showClear: false
+                - tooltipText: ''
+                - currency: USD
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: '1000'
+                - labelCaption: ''
+                - min: '1'
+                - labelWidth: '33'
+                - placeholder: ''
+                - showStepper: true
+                - label: Limit (optional, max 1000)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - format: decimal
+                - iconBefore: ''
+                - textAlign: left
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - decimalPlaces: '0'
+                - labelWrap: false
+                - padDecimal: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 3
+                height: 1
+                width: 7
+            createdAt: 2022-12-01T22:29:12.210Z
+            updatedAt: 2022-12-01T22:29:12.210Z
+      - button5:
+          pluginTemplate:
+            id: button5
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Orders for User
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: '{{ textInput8.value != ""}}'
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query3
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{textInput8.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 4.4
+                height: 1.2
+            createdAt: 2022-12-01T22:29:12.332Z
+            updatedAt: 2022-12-01T22:52:40.770Z
+      - table4:
+          pluginTemplate:
+            id: table4
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths:
+                    - object:
+                        id: clientOrderId
+                        value: 365
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - filledSize: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - rejectReason: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - fee: ''
+                      - content-encoding: ''
+                      - stopPrice: ''
+                      - orderConfiguration: ''
+                      - endTime: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - x-frame-options: ''
+                      - assetPair: ''
+                      - productId: ''
+                      - averageFilledPrice: ''
+                      - content-security-policy: ''
+                      - postOnly: ''
+                      - content-type: ''
+                      - limitPrice: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - filledValue: ''
+                      - quoteQuantityRemaining: ''
+                      - sizeInclusiveOfFees: ''
+                      - numberOfFills: ''
+                      - pendingCancel: ''
+                      - totalFees: ''
+                      - outstandingHoldAmount: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - createdTime: ''
+                      - sizeInQuote: ''
+                      - completionPercentage: ''
+                      - side: ''
+                      - timeInForce: ''
+                      - content-length: ''
+                      - baseQuantityRemaining: ''
+                      - quoteSize: ''
+                      - stopDirection: ''
+                      - cancelReason: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - rejectReason: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - stopPrice: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - averageFilledPrice: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - sizeInclusiveOfFees: true
+                      - numberOfFills: true
+                      - pendingCancel: true
+                      - totalFees: true
+                      - outstandingHoldAmount: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - sizeInQuote: true
+                      - completionPercentage: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - stopDirection: true
+                      - cancelReason: true
+                      - clientOrderId: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - rejectReason: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - stopPrice: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - averageFilledPrice: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - sizeInclusiveOfFees: true
+                      - numberOfFills: true
+                      - pendingCancel: true
+                      - totalFees: true
+                      - outstandingHoldAmount: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - sizeInQuote: true
+                      - completionPercentage: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - stopDirection: true
+                      - cancelReason: true
+                      - clientOrderId: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query3.data == undefined ? [] : query3.data.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - assetPair
+                    - clientOrderId
+                    - status
+                    - side
+                    - createdTime
+                    - baseSize
+                    - quoteSize
+                    - fee
+                    - orderType
+                    - timeInForce
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - filledValue
+                    - filledSize
+                    - numberOfFills
+                    - productType
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - completionPercentage
+                    - averageFilledPrice
+                    - sizeInQuote
+                    - pendingCancel
+                    - sizeInclusiveOfFees
+                    - outstandingHoldAmount
+                    - cancelReason
+                    - rejectReason
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - assetPair
+                    - clientOrderId
+                    - status
+                    - side
+                    - createdTime
+                    - baseSize
+                    - quoteSize
+                    - fee
+                    - orderType
+                    - timeInForce
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - filledValue
+                    - filledSize
+                    - numberOfFills
+                    - productType
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - completionPercentage
+                    - averageFilledPrice
+                    - sizeInQuote
+                    - pendingCancel
+                    - sizeInclusiveOfFees
+                    - outstandingHoldAmount
+                    - cancelReason
+                    - rejectReason
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 6.2
+                height: 8
+                width: 11
+            createdAt: 2022-12-01T22:29:12.605Z
+            updatedAt: 2023-01-04T20:19:26.859Z
+      - button6:
+          pluginTemplate:
+            id: button6
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Next Page
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query3
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: >-
+                    {{ textInput8.value == "" || query3.data == undefined ||
+                    query3.data.cursor == ""  }}
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 14.6
+                col: 9
+                height: 1
+                width: 2
+            createdAt: 2022-12-01T22:32:23.628Z
+            updatedAt: 2022-12-01T22:53:30.153Z
+      - container4:
+          pluginTemplate:
+            id: container4
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 50.8
+                col: 1
+                height: 6
+                width: 11
+            createdAt: 2022-12-01T22:53:51.534Z
+            updatedAt: 2022-12-01T22:53:51.534Z
+      - containerTitle4:
+          pluginTemplate:
+            id: containerTitle4
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get Fills for OrderID'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2022-12-01T22:53:51.914Z
+            updatedAt: 2022-12-01T22:54:03.997Z
+      - textInput10:
+          pluginTemplate:
+            id: textInput10
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: ''
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 11-1111-1111'
+                - label: Root Order UUID (optional)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 2.4
+                height: 1
+                width: 8
+            createdAt: 2022-12-01T22:54:19.549Z
+            updatedAt: 2022-12-01T22:56:19.559Z
+      - table5:
+          pluginTemplate:
+            id: table5
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - size: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - content-encoding: ''
+                      - orderConfiguration: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - price: ''
+                      - x-frame-options: ''
+                      - productId: ''
+                      - commission: ''
+                      - content-security-policy: ''
+                      - entryId: ''
+                      - content-type: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - tradeTime: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - side: ''
+                      - timeInForce: ''
+                      - content-length: ''
+                      - quoteSize: ''
+                      - tradeType: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                      - tradeId: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - size: true
+                      - x-permitted-cross-domain-policies: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - price: true
+                      - x-frame-options: true
+                      - productId: true
+                      - commission: true
+                      - content-security-policy: true
+                      - entryId: true
+                      - content-type: true
+                      - x-download-options: true
+                      - date: true
+                      - tradeTime: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - quoteSize: true
+                      - tradeType: true
+                      - clientOrderId: true
+                      - connection: true
+                      - tradeId: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - size: true
+                      - x-permitted-cross-domain-policies: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - price: true
+                      - x-frame-options: true
+                      - productId: true
+                      - commission: true
+                      - content-security-policy: true
+                      - entryId: true
+                      - content-type: true
+                      - x-download-options: true
+                      - date: true
+                      - tradeTime: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - quoteSize: true
+                      - tradeType: true
+                      - clientOrderId: true
+                      - connection: true
+                      - tradeId: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query4.data == undefined ? [] : query4.data.fills }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: Get Next Page
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: query4
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: graphqlCursorBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - entryId
+                    - tradeId
+                    - tradeTime
+                    - tradeType
+                    - price
+                    - size
+                    - commission
+                    - side
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - entryId
+                    - tradeId
+                    - tradeTime
+                    - tradeType
+                    - price
+                    - size
+                    - commission
+                    - side
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 6.4
+                height: 8.8
+                width: 11
+            createdAt: 2022-12-01T22:54:20.256Z
+            updatedAt: 2022-12-01T23:12:19.200Z
+      - button7:
+          pluginTemplate:
+            id: button7
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Next Page
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query4
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: >-
+                    {{ textInput11.value == "" || query4.data == undefined ||
+                    query4.data.cursor == ""  }}
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 15.2
+                col: 9
+                height: 1
+                width: 2
+            createdAt: 2022-12-01T22:54:20.636Z
+            updatedAt: 2022-12-01T23:05:59.775Z
+      - text2:
+          pluginTemplate:
+            id: text2
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    This tool can be used to get fills by order ID or by trade
+                    ID. 
+
+                    If there are more fills than shown in the table, please use
+                    the button "Get Next Page" to get the next set of fills for
+                    the orderID.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                height: 0.6
+                width: 11
+            createdAt: 2022-12-01T22:54:20.910Z
+            updatedAt: 2022-12-01T22:54:20.910Z
+      - textInput11:
+          pluginTemplate:
+            id: textInput11
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ textInput5.value }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 123-26271-37383'
+                - label: User ID or UUID (accepts either, required)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 1.4
+                height: 1
+                width: 11
+            createdAt: 2022-12-01T22:54:21.072Z
+            updatedAt: 2023-05-18T22:20:38.967Z
+      - numberInput2:
+          pluginTemplate:
+            id: numberInput2
+            type: widget
+            subtype: NumberInputWidget
+            template:
+              ordered:
+                - readOnly: false
+                - iconAfter: ''
+                - max: '1000'
+                - preventScroll: false
+                - inputValue: null
+                - hidden: false
+                - customValidation: ''
+                - showSeparators: true
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - allowNull: false
+                - showClear: false
+                - tooltipText: ''
+                - currency: USD
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: '1000'
+                - labelCaption: ''
+                - min: '1'
+                - labelWidth: '33'
+                - placeholder: ''
+                - showStepper: true
+                - label: Limit (optional, max 1000)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - format: decimal
+                - iconBefore: ''
+                - textAlign: left
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - decimalPlaces: '0'
+                - labelWrap: false
+                - padDecimal: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 4.4
+                height: 1
+                width: 8
+            createdAt: 2022-12-01T22:54:21.813Z
+            updatedAt: 2022-12-01T22:54:21.813Z
+      - button8:
+          pluginTemplate:
+            id: button8
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Fills
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query4
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                        - enabled: ''
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{ textInput11.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 5.4
+                height: 1
+            createdAt: 2022-12-01T22:54:22.541Z
+            updatedAt: 2022-12-01T22:57:53.020Z
+      - textInput12:
+          pluginTemplate:
+            id: textInput12
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: ''
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 11-1111-1111'
+                - label: Trade UUID (optional)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container4
+                row: 3.4
+                height: 1
+                width: 8
+            createdAt: 2022-12-01T22:54:22.903Z
+            updatedAt: 2022-12-01T22:56:23.350Z
+      - query4:
+          pluginTemplate:
+            id: query4
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >-
+                    # GraphQL queries typically start with a "{" character.
+                    Lines that start
+
+                    # with a # are ignored.
+
+                    #
+
+                    # An example GraphQL query might look like:
+
+                    #
+
+                    #     {
+
+                    #       field(arg: "value") {
+
+                    #         subField
+
+                    #       }
+
+                    #     }
+
+                    #
+
+                    # Keyboard shortcuts:
+
+                    #
+
+                    #   Auto Complete:  Ctrl-Space (or just start typing)
+
+
+
+                    query fills($userID: String!, $cursor: String, $limit: Int,
+                    $orderID: String, $tradeID: String) {
+                      getRATOrderFills(input: {
+                        userId: $userID, 
+                        cursor: $cursor, 
+                        limit: $limit, 
+                        orderId: $orderID
+                        tradeID: $tradeID,
+                      }) {
+                        fills {
+                          orderId
+                          productId
+                          side
+                          tradeId
+                          tradeTime
+                          price
+                          size
+                          commission
+                          entryId
+                        }
+                        cursor
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userID","value":"{{
+                    textInput11.value}}"},{"key":"cursor","value":"{{
+                    localStorage.values != undefined ?
+                    localStorage.values.next_cursor_fills : \"\"
+                    }}"},{"key":"limit","value":"{{
+                    numberInput2.value}}"},{"key":"orderID","value":"{{
+                    textInput10.value}}"},{"key":"tradeID","value":"{{
+                    textInput12.value}}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return {fills: data.getRATOrderFills.fills, cursor:
+                    data.getRATOrderFills.cursor}
+                - events:
+                    - ordered:
+                        - event: success
+                        - type: localStorage
+                        - method: setValue
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered:
+                              - key: next_cursor_fills
+                              - newValue: '{{ query4.data.cursor}}'
+                        - waitType: debounce
+                        - waitMs: '0'
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-12-01T22:54:57.183Z
+            updatedAt: 2023-10-26T16:04:38.210Z
+      - $main:
+          pluginTemplate:
+            id: $main
+            type: frame
+            subtype: Frame
+            template:
+              ordered:
+                - type: main
+            style:
+              ordered: []
+            createdAt: 2023-10-26T16:04:03.050Z
+            updatedAt: 2023-10-26T16:04:03.050Z
+  version: 3.2.3

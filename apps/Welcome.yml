@@ -1,0 +1,189 @@
+version: 43.0.9
+pageUuid: dd7d8b8a-f60a-11eb-8c88-d76f6aefafce
+appTemplate:
+  plugins:
+    ordered:
+      - welcomeText:
+          pluginTemplate:
+            id: welcomeText
+            type: widget
+            subtype: TextWidget2
+            resourceName: ''
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    Welcome to your Reusable Retool instance. You can find the
+                    README at [go/itp-retool](http://go/itp-retool).
+
+                    In this Retool instance, we have provided Authentication and
+                    Authorization modules for you to use throughout your Retool
+                    Apps. 
+
+
+                    You can check out an example Admin GQL query if go into the
+                    "Edit App" mode on the top right corner.
+
+
+                    This also sanity checks this instance. You can use this
+                    module to edit and congirm that you're changes are indeed
+                    being persisted.
+                - style:
+                    ordered: []
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 4.4
+                col: 2
+                height: 1
+                width: 10
+            createdAt: 2021-08-05T16:48:39.470Z
+            updatedAt: 2023-10-27T02:23:30.004Z
+      - text1:
+          pluginTemplate:
+            id: text1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    👋 **Hello
+                    {{sample_gql_query.data.getUserPermissions.name}}, your uuid
+                    is {{sample_gql_query.data.getUserPermissions.uuid}}!**
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 6.799999999999998
+                col: 2
+                height: 0.6
+                width: 4
+            createdAt: 2023-07-01T02:31:29.154Z
+            updatedAt: 2023-08-01T22:44:39.145Z
+      - sample_gql_query:
+          pluginTemplate:
+            id: sample_gql_query
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    query ($email: String!) {
+                      getUserPermissions(email: $email) {
+                        uuid
+                        name
+                        role_permission_map {     
+                          role { 
+                            name 
+                            permissions   
+                          }    
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: '[{"key":"email","value":"{{current_user.email}}"}]'
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: |-
+                    // Query results are available as the `data` variable
+                    return formatDataAsArray(data)
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-08-05T00:03:07.202Z
+            updatedAt: 2023-08-05T00:03:38.791Z
+  version: 3.2.3

@@ -1,0 +1,559 @@
+version: 43.0.9
+pageUuid: a8098ff2-669e-11ed-9739-8f8d3f8edfbf
+appTemplate:
+  plugins:
+    ordered:
+      - query_get_transaction_summary:
+          pluginTemplate:
+            id: query_get_transaction_summary
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >
+                    # GraphQL queries typically start with a "{" character.
+                    Lines that start
+
+                    # with a # are ignored.
+
+                    #
+
+                    # An example GraphQL query might look like:
+
+                    #
+
+                    #     {
+
+                    #       field(arg: "value") {
+
+                    #         subField
+
+                    #       }
+
+                    #     }
+
+                    #
+
+                    # Keyboard shortcuts:
+
+                    #
+
+                    #   Auto Complete:  Ctrl-Space (or just start typing)
+
+                    query feeTiers($userId: String!, $userUuid: String!) {
+                      getTransactionSummary(
+                        input: {
+                          user_uuid: $userUuid,
+                          user_id: $userId,
+                          user_native_currency: "USD",
+                          product_type: SPOT}
+                      ) {
+                          thirty_day_trading_volume {
+                          value
+                          currency
+                        }
+                        fee_tier {
+                          taker_fee_rate
+                          maker_fee_rate
+                          usd_from
+                          usd_to
+                          pricing_tier
+                        }
+                        rat_thirty_day_trading_volume {
+                          value
+                          currency
+                        }
+                        pro_thirty_day_trading_volume {
+                          value
+                          currency
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userId","value":"{{ textInput1.value
+                    }}"},{"key":"userUuid","value":"{{ textInput2.value }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-11-17T17:38:35.700Z
+            updatedAt: 2023-10-26T16:03:46.193Z
+      - textInput1:
+          pluginTemplate:
+            id: textInput1
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter UserID
+                - label: User ID
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                col: 1
+                height: 1
+                width: 4
+            createdAt: 2022-11-17T17:39:52.559Z
+            updatedAt: 2022-11-21T17:16:47.289Z
+      - textInput2:
+          pluginTemplate:
+            id: textInput2
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter Enter User UUID
+                - label: User UUID
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 1.1999999999999997
+                col: 1
+                height: 1
+                width: 4
+            createdAt: 2022-11-17T17:40:22.935Z
+            updatedAt: 2022-11-21T17:16:41.270Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Get Fee Tiers For User
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: ''
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query_get_transaction_summary
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: false
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 2.8
+                col: 1
+                height: 1
+            createdAt: 2022-11-21T17:16:19.520Z
+            updatedAt: 2022-11-22T01:32:31.431Z
+      - keyValue1:
+          pluginTemplate:
+            id: keyValue1
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered: []
+                - valueTitle: Value
+                - data: >-
+                    {{query_get_transaction_summary.data.getTransactionSummary.fee_tier}}
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - a: true
+                      - b: true
+                      - c: true
+                      - usd_from: true
+                      - taker_fee_rate: true
+                      - maker_fee_rate: true
+                      - usd_to: true
+                      - pricing_tier: true
+                      - getTransactionSummary: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - getTransactionSummary
+                    - taker_fee_rate
+                    - maker_fee_rate
+                    - usd_from
+                    - usd_to
+                    - pricing_tier
+                - keyTitle: Key
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 4.6
+                col: 1
+                width: 2
+            createdAt: 2022-11-21T18:17:07.648Z
+            updatedAt: 2022-11-22T01:59:34.385Z
+      - keyValue2:
+          pluginTemplate:
+            id: keyValue2
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered: []
+                - valueTitle: Combined 30 Day Trading Volume
+                - data: >-
+                    {{query_get_transaction_summary.data.getTransactionSummary.thirty_day_trading_volume}}
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - a: true
+                      - b: true
+                      - c: true
+                      - usd_from: true
+                      - taker_fee_rate: true
+                      - currency: true
+                      - value: true
+                      - maker_fee_rate: true
+                      - usd_to: true
+                      - pricing_tier: true
+                      - getTransactionSummary: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - getTransactionSummary
+                    - taker_fee_rate
+                    - maker_fee_rate
+                    - usd_from
+                    - usd_to
+                    - pricing_tier
+                    - value
+                    - currency
+                - keyTitle: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 4.6
+                col: 4
+                height: 2.6
+                width: 4
+            createdAt: 2022-11-21T18:17:41.271Z
+            updatedAt: 2022-11-22T01:59:34.389Z
+      - keyValue3:
+          pluginTemplate:
+            id: keyValue3
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered: []
+                - valueTitle: RAT 30 Day Trading Volume
+                - data: >-
+                    {{query_get_transaction_summary.data.getTransactionSummary.rat_thirty_day_trading_volume}}
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - a: true
+                      - b: true
+                      - c: true
+                      - usd_from: true
+                      - taker_fee_rate: true
+                      - currency: true
+                      - value: true
+                      - maker_fee_rate: true
+                      - usd_to: true
+                      - pricing_tier: true
+                      - getTransactionSummary: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - getTransactionSummary
+                    - taker_fee_rate
+                    - maker_fee_rate
+                    - usd_from
+                    - usd_to
+                    - pricing_tier
+                    - value
+                    - currency
+                - keyTitle: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 7.4
+                col: 4
+                height: 2.6
+                width: 4
+            createdAt: 2022-11-21T18:18:35.622Z
+            updatedAt: 2022-11-22T01:59:34.393Z
+      - keyValue4:
+          pluginTemplate:
+            id: keyValue4
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered: []
+                - valueTitle: Pro 30 Day Trading Volume
+                - data: >-
+                    {{query_get_transaction_summary.data.getTransactionSummary.pro_thirty_day_trading_volume}}
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - a: true
+                      - b: true
+                      - c: true
+                      - usd_from: true
+                      - taker_fee_rate: true
+                      - currency: true
+                      - value: true
+                      - maker_fee_rate: true
+                      - usd_to: true
+                      - pricing_tier: true
+                      - getTransactionSummary: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - getTransactionSummary
+                    - taker_fee_rate
+                    - maker_fee_rate
+                    - usd_from
+                    - usd_to
+                    - pricing_tier
+                    - value
+                    - currency
+                - keyTitle: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 10.2
+                col: 4
+                height: 2.6
+                width: 4
+            createdAt: 2022-11-21T18:18:39.365Z
+            updatedAt: 2022-11-22T14:16:46.542Z
+      - $main:
+          pluginTemplate:
+            id: $main
+            type: frame
+            subtype: Frame
+            template:
+              ordered:
+                - type: main
+            style:
+              ordered: []
+            createdAt: 2023-10-26T16:03:38.378Z
+            updatedAt: 2023-10-26T16:03:38.378Z
+  version: 3.2.3

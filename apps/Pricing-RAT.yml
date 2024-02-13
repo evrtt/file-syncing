@@ -1,0 +1,2422 @@
+version: 43.0.9
+pageUuid: 863ff12e-80db-11ee-980e-23abb0a73109
+appTemplate:
+  plugins:
+    ordered:
+      - $main:
+          pluginTemplate:
+            id: $main
+            type: frame
+            subtype: Frame
+            template:
+              ordered:
+                - type: main
+            style:
+              ordered: []
+            createdAt: 2023-10-26T16:02:59.578Z
+            updatedAt: 2023-10-26T16:02:59.578Z
+      - container1:
+          pluginTemplate:
+            id: container1
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - heightType: auto
+                - currentViewKey: null
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _iconByIndex:
+                    - ''
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: false
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ea849
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 0.6
+                height: 0.2
+                width: 12
+            createdAt: 2023-11-02T16:58:10.541Z
+            updatedAt: 2023-11-11T22:25:34.638Z
+      - containerTitle1:
+          pluginTemplate:
+            id: containerTitle1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### RAT Pricing'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                height: 0.6
+                width: 10
+            createdAt: 2023-11-02T16:58:10.866Z
+            updatedAt: 2023-11-22T15:13:09.953Z
+      - container2:
+          pluginTemplate:
+            id: container2
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - heightType: auto
+                - currentViewKey: null
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _iconByIndex:
+                    - ''
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: false
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ea849
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 0.7999999999999993
+                height: 0.2
+                width: 12
+            createdAt: 2023-11-02T17:38:29.948Z
+            updatedAt: 2023-11-02T17:38:29.948Z
+      - containerTitle2:
+          pluginTemplate:
+            id: containerTitle2
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get Experiment Eligibility of User '
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-11-02T17:38:30.270Z
+            updatedAt: 2023-11-11T21:50:40.481Z
+      - textInput1:
+          pluginTemplate:
+            id: textInput1
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter value
+                - label: User UUID (required)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: GetExperimentEligibility
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                subcontainer: ea849
+                height: 1
+                width: 4
+            createdAt: 2023-11-02T17:39:41.396Z
+            updatedAt: 2023-11-22T02:01:27.186Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Submit
+                - showInEditor: false
+                - tooltipText: ''
+                - style:
+                    ordered:
+                      - background: rgba(25, 160, 48, 1)
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: GetFeeRates
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: false
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                subcontainer: ea849
+                row: 1.1999999999999997
+                height: 1
+            createdAt: 2023-11-02T17:43:39.829Z
+            updatedAt: 2023-11-22T02:25:00.296Z
+      - GetAllPricingExperiments:
+          pluginTemplate:
+            id: GetAllPricingExperiments
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    query getAllPricingExperiments {
+                      getAllPricingExperiments{
+                        fee_incentives{
+                          name
+                          fee_tier{
+                            usd_from
+                            usd_to
+                            pricing_tier
+                            taker_fee_rate
+                            maker_fee_rate
+                          }
+                          productType
+                          end_date
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - paginationPaginationField: ''
+                - headers: >-
+                    [{"key":"jwt","value":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiZGJkNDNkMzAtODg5YS01MjBjLWI5YTQtYTY1OTcwYzJhMjYwIiwic2NvcGVzIjpbIndhbGxldDp1c2VyOnJlYWQiLCJ3YWxsZXQ6dXNlcjplbWFpbCIsIndhbGxldDp1c2VyOnVwZGF0ZSIsIndhbGxldDpjb250YWN0czpyZWFkIiwid2FsbGV0OmFjY291bnRzOnJlYWQiLCJ3YWxsZXQ6YWNjb3VudHM6Y3JlYXRlIiwid2FsbGV0OmFjY291bnRzOnVwZGF0ZSIsIndhbGxldDphY2NvdW50czpkZWxldGUiLCJ3YWxsZXQ6YWRkcmVzc2VzOnJlYWQiLCJ3YWxsZXQ6YWRkcmVzc2VzOmNyZWF0ZSIsIndhbGxldDp0cmFuc2FjdGlvbnM6cmVhZCIsIndhbGxldDp0cmFuc2FjdGlvbnM6c2VuZCIsIndhbGxldDp0cmFuc2FjdGlvbnM6cmVxdWVzdCIsIndhbGxldDp0cmFuc2FjdGlvbnM6dHJhbnNmZXIiLCJ3YWxsZXQ6YnV5czpyZWFkIiwid2FsbGV0OmJ1eXM6Y3JlYXRlIiwid2FsbGV0OnNlbGxzOnJlYWQiLCJ3YWxsZXQ6c2VsbHM6Y3JlYXRlIiwid2FsbGV0OnRyYWRlczpyZWFkIiwid2FsbGV0OnRyYWRlczpjcmVhdGUiLCJ3YWxsZXQ6ZGVwb3NpdHM6cmVhZCIsIndhbGxldDpkZXBvc2l0czpjcmVhdGUiLCJ3YWxsZXQ6d2l0aGRyYXdhbHM6cmVhZCIsIndhbGxldDp3aXRoZHJhd2FsczpjcmVhdGUiLCJ3YWxsZXQ6cGF5bWVudC1tZXRob2RzOnJlYWQiLCJ3YWxsZXQ6cGF5bWVudC1tZXRob2RzOmRlbGV0ZSIsIndhbGxldDpwYXltZW50LW1ldGhvZHM6bGltaXRzIiwid2FsbGV0OnN1cHBvcnRlZC1hc3NldHM6cmVhZCIsImludGVybmFsOndhbGxldDphZGRyZXNzZXM6cGFyc2UiLCJpbnRlcm5hbDp3YWxsZXQ6dXNlciIsImludGVybmFsOndhbGxldDphY2NvdW50cyIsImludGVybmFsOndhbGxldDpwaG9uZS1udW1iZXJzIiwiaW50ZXJuYWw6d2FsbGV0OmJpbGxpbmctYWRkcmVzc2VzIiwiaW50ZXJuYWw6d2FsbGV0OnBheW1lbnQtbWV0aG9kcyIsImludGVybmFsOndhbGxldDpyZWN1cnJpbmctcGF5bWVudHMiLCJpbnRlcm5hbDp3YWxsZXQ6anVtaW8tcHJvZmlsZXMiLCJpbnRlcm5hbDp3YWxsZXQ6cmVzdHJpY3Rpb25zIiwiaW50ZXJuYWw6d2FsbGV0OnRyYW5zYWN0aW9ucyIsImludGVybmFsOndhbGxldDphbGVydHMiLCJpbnRlcm5hbDp3YWxsZXQ6YWRkcmVzcy1ib29rIiwiaW50ZXJuYWw6d2FsbGV0OmlkZW50aXR5LXZlcmlmaWNhdGlvbnMiLCJpbnRlcm5hbDp3YWxsZXQ6bGV2ZWwtcmVxdWVzdHMiLCJpbnRlcm5hbDp3YWxsZXQ6aW52aXRlcyIsImludGVybmFsOndhbGxldDpwcm9vZi1vZi1hZGRyZXNzIiwiaW50ZXJuYWw6d2FsbGV0Om9uYm9hcmRpbmctdmVyaWZpY2F0aW9ucyIsImludGVybmFsOndhbGxldDpwcm9tcHRzIiwiaW50ZXJuYWw6d2FsbGV0OndhdGNoZWQtYXNzZXRzIiwiaW50ZXJuYWw6ZWFybjp0YXNrcyIsImludGVybmFsOndhbGxldC1hZGRyZXNzZXM6cmVhZCIsImludGVybmFsOndhbGxldDpzZWNvbmQtZmFjdG9yIiwiaW50ZXJuYWw6bG95YWx0eS1zZXJ2aWNlIiwiaW50ZXJuYWw6cmV3YXJkcyIsImludGVybmFsOmxvYW5zOnJlYWQiLCJpbnRlcm5hbDpsb2Fuczp1cGRhdGUiLCJpbnRlcm5hbDp3YWxsZXQ6dG9nZ2xlLTJmYS1zZW5kIl0sInBlcm1pc3Npb25zIjpbXSwiand0X2NsaWVudCI6Ind3dyIsImV4cCI6MTcwMDY4NzQ2MX0.zjzkAwgjaea9Kj6KF_cc1XdN_4DtG7n6HSjwEedgntc"}]
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: '[]'
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: null
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return {data:
+                    data.getPendingStatusMatchInquiries.status_match_inquiries.reduce((agg,
+                    row) => {
+                      row2 = {
+                        userUuid: row.user_uuid,
+                        // fee: row.totalFees,
+                        // ...row.orderConfiguration,
+                        // ...row,  
+                      }
+                      // delete row2.productId
+                      // delete row2.orderConfiguration
+                      // delete row2.totalFees
+                      agg.push(row2)
+                      return agg
+                    }, []), cursor: data.getPendingStatusMatchInquiries.cursor}
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-11-04T15:32:29.850Z
+            updatedAt: 2023-11-22T02:00:30.834Z
+      - GetExperimentEligibility:
+          pluginTemplate:
+            id: GetExperimentEligibility
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >-
+                    query getEligibleIncentives($user_uuid: String!,
+                    $product_type: RetailProductType, $user_id: String!) {
+                      getEligibleIncentives(input: {
+                        user_uuid: $user_uuid,
+                        product_type: $product_type,
+                        user_id: $user_id
+                      }) {
+                         fee_incentives{
+                          name
+                          time
+                          text
+                          title
+                          cta_text
+                          cta_url
+                          banner_type
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"user_uuid","value":"{{
+                    textInput1.value}}"},{"key":"product_type","value":"{{textInput6.value}}"},{"key":"user_id","value":"{{textInput7.value}}"},{"key":"","value":""}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: null
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: |-
+                    // Query results are available as the `data` variable
+                    return formatDataAsArray(data)
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-11-05T20:25:48.878Z
+            updatedAt: 2023-11-22T02:06:53.647Z
+      - container7:
+          pluginTemplate:
+            id: container7
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - heightType: auto
+                - currentViewKey: null
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _iconByIndex:
+                    - ''
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: false
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ea849
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                subcontainer: ea849
+                row: 3.3306690738754696e-16
+                height: 0.2
+                width: 12
+            createdAt: 2023-11-11T22:18:19.022Z
+            updatedAt: 2023-11-11T22:18:19.022Z
+      - containerTitle6:
+          pluginTemplate:
+            id: containerTitle6
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get All Pricing Experiments'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container7
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-11-11T22:18:19.585Z
+            updatedAt: 2023-11-11T22:26:25.518Z
+      - table6:
+          pluginTemplate:
+            id: table6
+            type: widget
+            subtype: TableWidget2
+            template:
+              ordered:
+                - selectedRowKey: null
+                - _nextAfterCursor: ''
+                - _columnBackgroundColor:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _defaultSort: null
+                - _clearChangesetOnSave: true
+                - heightType: fixed
+                - disableEdits: false
+                - _rowHeight: small
+                - _columnIds:
+                    - 96e9e
+                    - c91ee
+                    - 4d5cc
+                    - a289d
+                - _isSaving: false
+                - _actionIds: []
+                - _clearChangeset: false
+                - caseSensitiveFiltering: false
+                - _limitOffsetRowCount: null
+                - selectedSourceRow: null
+                - _dynamicColumnsEnabled: false
+                - disableSave: false
+                - _columnEditableOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - a289d:
+                          ordered: []
+                - _toolbarPosition: bottom
+                - _groupByColumns: []
+                - _toolbarButtonLabel:
+                    ordered:
+                      - 1a: Filter
+                      - 3c: Download
+                      - 4d: Refresh
+                - _nextBeforeCursor: ''
+                - _persistRowSelection: false
+                - _toolbarButtonIcon:
+                    ordered:
+                      - 1a: bold/interface-text-formatting-filter-2
+                      - 3c: bold/interface-download-button-2
+                      - 4d: bold/interface-arrows-round-left
+                - changesetArray:
+                    array: []
+                - _toolbarButtonType:
+                    ordered:
+                      - 1a: filter
+                      - 3c: custom
+                      - 4d: custom
+                - _columnStatusIndicator:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - a289d:
+                          ordered: []
+                - _columnOptionList:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - a289d:
+                          ordered: []
+                - _columnValueOverride:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: '{{ _.startCase(item) }}'
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _showBorder: true
+                - _templatePageSize: null
+                - _dynamicColumnProperties:
+                    ordered: []
+                - _showHeader: true
+                - _currentPage: 0
+                - _columnKey:
+                    ordered:
+                      - 96e9e: name
+                      - 11ac1: s3_object_key
+                      - c91ee: productType
+                      - 4d5cc: fee_tier
+                      - a289d: end_date
+                - hidden: false
+                - _toolbarButtonIds:
+                    - 1a
+                    - 3c
+                    - 4d
+                - data: >-
+                    {{
+                    GetAllPricingExperiments.data.getAllPricingExperiments.fee_incentives
+                    }}
+                - _cellSelection: none
+                - _serverPaginated: false
+                - _linkedFilterId: null
+                - searchMode: fuzzy
+                - _columnCellTooltip:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _columnFormat:
+                    ordered:
+                      - 96e9e: string
+                      - 11ac1: string
+                      - c91ee: tag
+                      - 4d5cc: string
+                      - a289d: string
+                - _cursorCache:
+                    object: {}
+                - _calculatedPageSize: null
+                - _primaryKeyColumnId: ''
+                - selectedDataIndex: null
+                - _columnAlignment:
+                    ordered:
+                      - 96e9e: left
+                      - 11ac1: left
+                      - c91ee: left
+                      - 4d5cc: left
+                      - a289d: left
+                - _actionIcon:
+                    ordered: []
+                - _columnTooltip:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _columnIcon:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _columnCellTooltipMode:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _pageSize: null
+                - showInEditor: false
+                - selectedSourceRows:
+                    array: []
+                - _columnSortDisabled:
+                    ordered:
+                      - 96e9e: false
+                      - 11ac1: false
+                      - c91ee: false
+                      - 4d5cc: false
+                      - a289d: false
+                - filterStack: null
+                - changesetObject: null
+                - _actionDisabled:
+                    ordered: []
+                - _columnReferenceId:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _dynamicColumnSource:
+                    array: []
+                - _rowSelection: single
+                - _columnCaption:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _dynamicRowHeights: false
+                - _columnFormatOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered:
+                            - automaticColors: true
+                      - c91ee:
+                          ordered:
+                            - automaticColors: true
+                      - 4d5cc:
+                          ordered: []
+                      - a289d:
+                          ordered:
+                            - showUnderline: hover
+                - _changeset: null
+                - _afterCursor: ''
+                - selectedRowKeys:
+                    array: []
+                - _beforeCursor: ''
+                - searchTerm: ''
+                - selectedRows:
+                    array: []
+                - _disabledVirtualization: false
+                - _showColumnBorders: false
+                - _columnStatusIndicatorOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - a289d:
+                          ordered: []
+                - _columnSize:
+                    ordered:
+                      - 96e9e: 184.3125
+                      - c91ee: 154.296875
+                      - 4d5cc: 345.3125
+                      - a289d: 1337
+                - _serverPaginationType: limitOffsetBased
+                - _showFooter: true
+                - _groupedColumnConfig:
+                    ordered: []
+                - _virtualizeStartIndex: 0
+                - _defaultFilters:
+                    ordered: []
+                - events:
+                    - ordered:
+                        - type: widget
+                        - waitMs: '0'
+                        - waitType: debounce
+                        - event: clickToolbar
+                        - method: exportData
+                        - pluginId: table6
+                        - targetId: 3c
+                    - ordered:
+                        - type: widget
+                        - waitMs: '0'
+                        - waitType: debounce
+                        - event: clickToolbar
+                        - method: refresh
+                        - pluginId: table6
+                        - targetId: 4d
+                    - ordered:
+                        - event: clickCell
+                        - type: util
+                        - method: openUrl
+                        - pluginId: ''
+                        - targetId: a289d
+                        - params:
+                            ordered:
+                              - url: '{{ item }}'
+                        - waitType: debounce
+                        - waitMs: '0'
+                - _columnEditable:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - pagination: null
+                - selectedDataIndexes:
+                    array: []
+                - sortArray:
+                    array: []
+                - _selectedCell: null
+                - overflowType: scroll
+                - selectedCell: null
+                - _defaultSelectedRow:
+                    ordered:
+                      - mode: index
+                      - indexType: display
+                      - index: 0
+                - _hasNextPage: false
+                - _includeRowInChangesetArray: false
+                - _columnPosition:
+                    ordered:
+                      - 96e9e: center
+                      - 11ac1: center
+                      - c91ee: center
+                      - 4d5cc: center
+                      - a289d: center
+                - _enableSaveActions: true
+                - _columnPlaceholder:
+                    ordered:
+                      - 96e9e: Enter value
+                      - 11ac1: Enter value
+                      - c91ee: Select option
+                      - 4d5cc: Enter value
+                      - a289d: Enter value
+                - _defaultFilterOperator: and
+                - _actionLabel:
+                    ordered: []
+                - _virtualizeEndIndex: 0
+                - selectedRow: null
+                - _actionHidden:
+                    ordered: []
+                - maintainSpaceWhenHidden: false
+                - _columnHidden:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: 'true'
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - a289d: ''
+                - _columnLabel:
+                    ordered:
+                      - 96e9e: Name
+                      - 11ac1: S3 object key
+                      - c91ee: Product Type
+                      - 4d5cc: Fee tier
+                      - a289d: End Date
+                - _showToolbar: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container7
+                subcontainer: ea849
+                row: 1
+                height: 7
+                width: 12
+            createdAt: 2023-11-11T22:18:20.934Z
+            updatedAt: 2023-11-22T02:00:52.650Z
+      - button8:
+          pluginTemplate:
+            id: button8
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Submit
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: ''
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: false
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container7
+                subcontainer: ea849
+                height: 1
+            createdAt: 2023-11-22T01:44:40.718Z
+            updatedAt: 2023-11-22T01:45:00.279Z
+      - textInput6:
+          pluginTemplate:
+            id: textInput6
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter value
+                - label: Product Type (required)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: GetExperimentEligibility
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                subcontainer: ea849
+                col: 4
+                height: 1
+                width: 4
+            createdAt: 2023-11-22T02:04:44.725Z
+            updatedAt: 2023-11-22T02:05:30.862Z
+      - textInput7:
+          pluginTemplate:
+            id: textInput7
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter value
+                - label: |-
+                    User ID
+                    (required)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: GetExperimentEligibility
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                subcontainer: ea849
+                col: 8
+                height: 1
+                width: 4
+            createdAt: 2023-11-22T02:04:56.064Z
+            updatedAt: 2023-11-22T02:05:41.651Z
+      - table7:
+          pluginTemplate:
+            id: table7
+            type: widget
+            subtype: TableWidget2
+            template:
+              ordered:
+                - selectedRowKey: null
+                - _nextAfterCursor: ''
+                - _columnBackgroundColor:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _defaultSort: null
+                - _clearChangesetOnSave: true
+                - heightType: fixed
+                - disableEdits: false
+                - _rowHeight: small
+                - _columnIds:
+                    - 96e9e
+                    - c91ee
+                    - 4d5cc
+                    - 248c2
+                    - 904ca
+                    - 1ffa6
+                    - 0fe09
+                - _isSaving: false
+                - _actionIds: []
+                - _clearChangeset: false
+                - caseSensitiveFiltering: false
+                - _limitOffsetRowCount: null
+                - selectedSourceRow: null
+                - _dynamicColumnsEnabled: false
+                - disableSave: false
+                - _columnEditableOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _toolbarPosition: bottom
+                - _groupByColumns: []
+                - _toolbarButtonLabel:
+                    ordered:
+                      - 1a: Filter
+                      - 3c: Download
+                      - 4d: Refresh
+                - _nextBeforeCursor: ''
+                - _persistRowSelection: false
+                - _toolbarButtonIcon:
+                    ordered:
+                      - 1a: bold/interface-text-formatting-filter-2
+                      - 3c: bold/interface-download-button-2
+                      - 4d: bold/interface-arrows-round-left
+                - changesetArray:
+                    array: []
+                - _toolbarButtonType:
+                    ordered:
+                      - 1a: filter
+                      - 3c: custom
+                      - 4d: custom
+                - _columnStatusIndicator:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _columnOptionList:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _columnValueOverride:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: '{{ _.startCase(item) }}'
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _showBorder: true
+                - _templatePageSize: null
+                - _dynamicColumnProperties:
+                    ordered: []
+                - _showHeader: true
+                - _currentPage: 0
+                - _columnKey:
+                    ordered:
+                      - 96e9e: name
+                      - 11ac1: s3_object_key
+                      - c91ee: time
+                      - 4d5cc: text
+                      - 248c2: title
+                      - 904ca: cta_text
+                      - 1ffa6: cta_url
+                      - 0fe09: banner_type
+                - hidden: false
+                - _toolbarButtonIds:
+                    - 1a
+                    - 3c
+                    - 4d
+                - data: >-
+                    {{
+                    GetExperimentEligibility.data.getEligibleIncentives.fee_incentives
+                    }}
+                - _cellSelection: none
+                - _serverPaginated: false
+                - _linkedFilterId: null
+                - searchMode: fuzzy
+                - _columnCellTooltip:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnFormat:
+                    ordered:
+                      - 96e9e: string
+                      - 11ac1: string
+                      - c91ee: string
+                      - 4d5cc: string
+                      - 248c2: string
+                      - 904ca: string
+                      - 1ffa6: link
+                      - 0fe09: string
+                - _cursorCache:
+                    object: {}
+                - _calculatedPageSize: null
+                - _primaryKeyColumnId: ''
+                - selectedDataIndex: null
+                - _columnAlignment:
+                    ordered:
+                      - 96e9e: left
+                      - 11ac1: left
+                      - c91ee: left
+                      - 4d5cc: left
+                      - 248c2: left
+                      - 904ca: left
+                      - 1ffa6: left
+                      - 0fe09: left
+                - _actionIcon:
+                    ordered: []
+                - _columnTooltip:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnIcon:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnCellTooltipMode:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _pageSize: null
+                - showInEditor: false
+                - selectedSourceRows:
+                    array: []
+                - _columnSortDisabled:
+                    ordered:
+                      - 96e9e: false
+                      - 11ac1: false
+                      - c91ee: false
+                      - 4d5cc: false
+                      - 248c2: false
+                      - 904ca: false
+                      - 1ffa6: false
+                      - 0fe09: false
+                - filterStack: null
+                - changesetObject: null
+                - _actionDisabled:
+                    ordered: []
+                - _columnReferenceId:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _dynamicColumnSource:
+                    array: []
+                - _rowSelection: single
+                - _columnCaption:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _dynamicRowHeights: false
+                - _columnFormatOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered:
+                            - automaticColors: true
+                      - c91ee:
+                          ordered:
+                            - automaticColors: true
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered:
+                            - showUnderline: hover
+                      - 0fe09:
+                          ordered: []
+                - _changeset: null
+                - _afterCursor: ''
+                - selectedRowKeys:
+                    array: []
+                - _beforeCursor: ''
+                - searchTerm: ''
+                - selectedRows:
+                    array: []
+                - _disabledVirtualization: false
+                - _showColumnBorders: false
+                - _columnStatusIndicatorOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _columnSize:
+                    ordered:
+                      - 96e9e: 184.3125
+                      - c91ee: 154.296875
+                      - 4d5cc: 99.3125
+                      - 248c2: 306
+                      - 904ca: 100
+                      - 1ffa6: 100
+                      - 0fe09: 100
+                - _serverPaginationType: limitOffsetBased
+                - _showFooter: true
+                - _groupedColumnConfig:
+                    ordered: []
+                - _virtualizeStartIndex: 0
+                - _defaultFilters:
+                    ordered: []
+                - events:
+                    - ordered:
+                        - type: widget
+                        - waitMs: '0'
+                        - waitType: debounce
+                        - event: clickToolbar
+                        - method: exportData
+                        - pluginId: table7
+                        - targetId: 3c
+                    - ordered:
+                        - type: widget
+                        - waitMs: '0'
+                        - waitType: debounce
+                        - event: clickToolbar
+                        - method: refresh
+                        - pluginId: table7
+                        - targetId: 4d
+                    - ordered:
+                        - event: clickCell
+                        - type: util
+                        - method: openUrl
+                        - pluginId: ''
+                        - targetId: a289d
+                        - params:
+                            ordered:
+                              - url: '{{ item }}'
+                        - waitType: debounce
+                        - waitMs: '0'
+                - _columnEditable:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - pagination: null
+                - selectedDataIndexes:
+                    array: []
+                - sortArray:
+                    array: []
+                - _selectedCell: null
+                - overflowType: scroll
+                - selectedCell: null
+                - _defaultSelectedRow:
+                    ordered:
+                      - mode: index
+                      - indexType: display
+                      - index: 0
+                - _hasNextPage: false
+                - _includeRowInChangesetArray: false
+                - _columnPosition:
+                    ordered:
+                      - 96e9e: center
+                      - 11ac1: center
+                      - c91ee: center
+                      - 4d5cc: center
+                      - 248c2: center
+                      - 904ca: center
+                      - 1ffa6: center
+                      - 0fe09: center
+                - _enableSaveActions: true
+                - _columnPlaceholder:
+                    ordered:
+                      - 96e9e: Enter value
+                      - 11ac1: Enter value
+                      - c91ee: Enter value
+                      - 4d5cc: Enter value
+                      - 248c2: Enter value
+                      - 904ca: Enter value
+                      - 1ffa6: Enter value
+                      - 0fe09: Enter value
+                - _defaultFilterOperator: and
+                - _actionLabel:
+                    ordered: []
+                - _virtualizeEndIndex: 0
+                - selectedRow: null
+                - _actionHidden:
+                    ordered: []
+                - maintainSpaceWhenHidden: false
+                - _columnHidden:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: 'true'
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnLabel:
+                    ordered:
+                      - 96e9e: Name
+                      - 11ac1: S3 object key
+                      - c91ee: End Date
+                      - 4d5cc: Banner Text
+                      - 248c2: Banner title
+                      - 904ca: Cta text
+                      - 1ffa6: Cta URL
+                      - 0fe09: Banner type
+                - _showToolbar: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                subcontainer: ea849
+                row: 2.2
+                height: 7
+                width: 12
+            createdAt: 2023-11-22T02:08:39.769Z
+            updatedAt: 2023-11-22T15:11:39.374Z
+      - container8:
+          pluginTemplate:
+            id: container8
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - heightType: auto
+                - currentViewKey: null
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _iconByIndex:
+                    - ''
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: false
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ea849
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 1
+                height: 0.2
+                width: 12
+            createdAt: 2023-11-22T21:43:37.089Z
+            updatedAt: 2023-11-22T21:43:37.089Z
+      - containerTitle7:
+          pluginTemplate:
+            id: containerTitle7
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Get Fee Rates for a User'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container8
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-11-22T21:43:37.410Z
+            updatedAt: 2023-11-22T21:43:58.181Z
+      - textInput8:
+          pluginTemplate:
+            id: textInput8
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter value
+                - label: User UUID (required)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: GetExperimentEligibility
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container8
+                subcontainer: ea849
+                height: 1
+                width: 4
+            createdAt: 2023-11-22T21:43:37.604Z
+            updatedAt: 2023-11-22T21:43:37.604Z
+      - button9:
+          pluginTemplate:
+            id: button9
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Submit
+                - showInEditor: false
+                - tooltipText: ''
+                - style:
+                    ordered:
+                      - background: rgba(25, 160, 48, 1)
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: GetFeeRates
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: false
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container8
+                subcontainer: ea849
+                row: 1.2
+                height: 1
+            createdAt: 2023-11-22T21:43:37.841Z
+            updatedAt: 2023-11-22T21:43:37.841Z
+      - table8:
+          pluginTemplate:
+            id: table8
+            type: widget
+            subtype: TableWidget2
+            template:
+              ordered:
+                - selectedRowKey: null
+                - _nextAfterCursor: ''
+                - _columnBackgroundColor:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _defaultSort: null
+                - _clearChangesetOnSave: true
+                - heightType: fixed
+                - disableEdits: false
+                - _rowHeight: small
+                - _columnIds:
+                    - 96e9e
+                    - c91ee
+                    - 4d5cc
+                    - 248c2
+                    - 904ca
+                    - 0fe09
+                    - 1ffa6
+                - _isSaving: false
+                - _actionIds: []
+                - _clearChangeset: false
+                - caseSensitiveFiltering: false
+                - _limitOffsetRowCount: null
+                - selectedSourceRow: null
+                - _dynamicColumnsEnabled: false
+                - disableSave: false
+                - _columnEditableOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered:
+                            - showStepper: true
+                      - 4d5cc:
+                          ordered:
+                            - showStepper: true
+                      - 248c2:
+                          ordered:
+                            - showStepper: true
+                      - 904ca:
+                          ordered:
+                            - showStepper: true
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _toolbarPosition: bottom
+                - _groupByColumns: []
+                - _toolbarButtonLabel:
+                    ordered:
+                      - 1a: Filter
+                      - 3c: Download
+                      - 4d: Refresh
+                - _nextBeforeCursor: ''
+                - _persistRowSelection: false
+                - _toolbarButtonIcon:
+                    ordered:
+                      - 1a: bold/interface-text-formatting-filter-2
+                      - 3c: bold/interface-download-button-2
+                      - 4d: bold/interface-arrows-round-left
+                - changesetArray:
+                    array: []
+                - _toolbarButtonType:
+                    ordered:
+                      - 1a: filter
+                      - 3c: custom
+                      - 4d: custom
+                - _columnStatusIndicator:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _columnOptionList:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _columnValueOverride:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: '{{ _.startCase(item) }}'
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _showBorder: true
+                - _templatePageSize: null
+                - _dynamicColumnProperties:
+                    ordered: []
+                - _showHeader: true
+                - _currentPage: 0
+                - _columnKey:
+                    ordered:
+                      - 96e9e: pricing_tier
+                      - 11ac1: s3_object_key
+                      - c91ee: usd_from
+                      - 4d5cc: usd_to
+                      - 248c2: taker_fee_rate
+                      - 904ca: maker_fee_rate
+                      - 1ffa6: aop_to
+                      - 0fe09: aop_from
+                - hidden: false
+                - _toolbarButtonIds:
+                    - 1a
+                    - 3c
+                    - 4d
+                - data: '{{ GetFeeRates.data.getFeeRates.original_fee_tiers}}'
+                - _cellSelection: none
+                - _serverPaginated: false
+                - _linkedFilterId: null
+                - searchMode: fuzzy
+                - _columnCellTooltip:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnFormat:
+                    ordered:
+                      - 96e9e: string
+                      - 11ac1: string
+                      - c91ee: decimal
+                      - 4d5cc: decimal
+                      - 248c2: percent
+                      - 904ca: percent
+                      - 1ffa6: string
+                      - 0fe09: string
+                - _cursorCache:
+                    object: {}
+                - _calculatedPageSize: null
+                - _primaryKeyColumnId: ''
+                - selectedDataIndex: null
+                - _columnAlignment:
+                    ordered:
+                      - 96e9e: left
+                      - 11ac1: left
+                      - c91ee: right
+                      - 4d5cc: right
+                      - 248c2: right
+                      - 904ca: right
+                      - 1ffa6: left
+                      - 0fe09: left
+                - _actionIcon:
+                    ordered: []
+                - _columnTooltip:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnIcon:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnCellTooltipMode:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _pageSize: null
+                - showInEditor: false
+                - selectedSourceRows:
+                    array: []
+                - _columnSortDisabled:
+                    ordered:
+                      - 96e9e: false
+                      - 11ac1: false
+                      - c91ee: false
+                      - 4d5cc: false
+                      - 248c2: false
+                      - 904ca: false
+                      - 1ffa6: false
+                      - 0fe09: false
+                - filterStack: null
+                - changesetObject: null
+                - _actionDisabled:
+                    ordered: []
+                - _columnReferenceId:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _dynamicColumnSource:
+                    array: []
+                - _rowSelection: single
+                - _columnCaption:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _dynamicRowHeights: false
+                - _columnFormatOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered:
+                            - automaticColors: true
+                      - c91ee:
+                          ordered:
+                            - showSeparators: true
+                            - notation: standard
+                      - 4d5cc:
+                          ordered:
+                            - showSeparators: true
+                            - notation: standard
+                      - 248c2:
+                          ordered:
+                            - showSeparators: true
+                            - notation: standard
+                      - 904ca:
+                          ordered:
+                            - showSeparators: true
+                            - notation: standard
+                      - 1ffa6:
+                          ordered:
+                            - showUnderline: hover
+                      - 0fe09:
+                          ordered: []
+                - _changeset: null
+                - _afterCursor: ''
+                - selectedRowKeys:
+                    array: []
+                - _beforeCursor: ''
+                - searchTerm: ''
+                - selectedRows:
+                    array: []
+                - _disabledVirtualization: false
+                - _showColumnBorders: false
+                - _columnStatusIndicatorOptions:
+                    ordered:
+                      - 96e9e:
+                          ordered: []
+                      - 11ac1:
+                          ordered: []
+                      - c91ee:
+                          ordered: []
+                      - 4d5cc:
+                          ordered: []
+                      - 248c2:
+                          ordered: []
+                      - 904ca:
+                          ordered: []
+                      - 1ffa6:
+                          ordered: []
+                      - 0fe09:
+                          ordered: []
+                - _columnSize:
+                    ordered:
+                      - 96e9e: 184.3125
+                      - c91ee: 154.296875
+                      - 4d5cc: 99.3125
+                      - 248c2: 306
+                      - 904ca: 100
+                      - 1ffa6: 100
+                      - 0fe09: 100
+                - _serverPaginationType: limitOffsetBased
+                - _showFooter: true
+                - _groupedColumnConfig:
+                    ordered: []
+                - _virtualizeStartIndex: 0
+                - _defaultFilters:
+                    ordered: []
+                - events:
+                    - ordered:
+                        - type: widget
+                        - waitMs: '0'
+                        - waitType: debounce
+                        - event: clickToolbar
+                        - method: exportData
+                        - pluginId: table8
+                        - targetId: 3c
+                    - ordered:
+                        - type: widget
+                        - waitMs: '0'
+                        - waitType: debounce
+                        - event: clickToolbar
+                        - method: refresh
+                        - pluginId: table8
+                        - targetId: 4d
+                    - ordered:
+                        - event: clickCell
+                        - type: util
+                        - method: openUrl
+                        - pluginId: ''
+                        - targetId: a289d
+                        - params:
+                            ordered:
+                              - url: '{{ item }}'
+                        - waitType: debounce
+                        - waitMs: '0'
+                - _columnEditable:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: ''
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - pagination: null
+                - selectedDataIndexes:
+                    array: []
+                - sortArray:
+                    array: []
+                - _selectedCell: null
+                - overflowType: scroll
+                - selectedCell: null
+                - _defaultSelectedRow:
+                    ordered:
+                      - mode: index
+                      - indexType: display
+                      - index: 0
+                - _hasNextPage: false
+                - _includeRowInChangesetArray: false
+                - _columnPosition:
+                    ordered:
+                      - 96e9e: center
+                      - 11ac1: center
+                      - c91ee: center
+                      - 4d5cc: center
+                      - 248c2: center
+                      - 904ca: center
+                      - 1ffa6: center
+                      - 0fe09: center
+                - _enableSaveActions: true
+                - _columnPlaceholder:
+                    ordered:
+                      - 96e9e: Enter value
+                      - 11ac1: Enter value
+                      - c91ee: Enter value
+                      - 4d5cc: Enter value
+                      - 248c2: Enter value
+                      - 904ca: Enter value
+                      - 1ffa6: Enter value
+                      - 0fe09: Enter value
+                - _defaultFilterOperator: and
+                - _actionLabel:
+                    ordered: []
+                - _virtualizeEndIndex: 0
+                - selectedRow: null
+                - _actionHidden:
+                    ordered: []
+                - maintainSpaceWhenHidden: false
+                - _columnHidden:
+                    ordered:
+                      - 96e9e: ''
+                      - 11ac1: 'true'
+                      - c91ee: ''
+                      - 4d5cc: ''
+                      - 248c2: ''
+                      - 904ca: ''
+                      - 1ffa6: ''
+                      - 0fe09: ''
+                - _columnLabel:
+                    ordered:
+                      - 96e9e: Pricing tier
+                      - 11ac1: S3 object key
+                      - c91ee: USD From
+                      - 4d5cc: USD To
+                      - 248c2: |
+                          Taker Fee Rates
+                      - 904ca: Maker fee rate
+                      - 1ffa6: AOP To
+                      - 0fe09: AOP From
+                - _showToolbar: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container8
+                subcontainer: ea849
+                row: 2.2
+                height: 7
+                width: 12
+            createdAt: 2023-11-22T21:43:38.876Z
+            updatedAt: 2023-11-29T14:20:53.958Z
+      - GetFeeRates:
+          pluginTemplate:
+            id: GetFeeRates
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    query GetFeeRates($user_uuid: String!){
+                      getFeeRates(input:{user_uuid: $user_uuid}){
+                        fee_tiers
+                        original_fee_tiers{
+                          pricing_tier
+                          usd_from
+                          usd_to
+                          taker_fee_rate
+                          maker_fee_rate
+                          aop_from
+                          aop_to
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: '[{"key":"user_uuid","value":"{{textInput8.value}}"}]'
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: null
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return {data:
+                    data.getPendingStatusMatchInquiries.status_match_inquiries.reduce((agg,
+                    row) => {
+                      row2 = {
+                        userUuid: row.user_uuid,
+                        // fee: row.totalFees,
+                        // ...row.orderConfiguration,
+                        // ...row,  
+                      }
+                      // delete row2.productId
+                      // delete row2.orderConfiguration
+                      // delete row2.totalFees
+                      agg.push(row2)
+                      return agg
+                    }, []), cursor: data.getPendingStatusMatchInquiries.cursor}
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-11-22T21:44:45.735Z
+            updatedAt: 2023-11-29T14:20:08.661Z
+  version: 3.2.3
