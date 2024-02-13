@@ -1,0 +1,1354 @@
+version: 43.0.9
+pageUuid: bfcf6c80-4652-11ee-ab72-efc0e95d3b7f
+appTemplate:
+  plugins:
+    ordered:
+      - intxPositions:
+          pluginTemplate:
+            id: intxPositions
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |
+                    query positions($userUuid: String!) {
+                      getIntxPositions(input: {user_uuid: $userUuid}) {
+                        positions {
+                          product_id
+                          product_uuid
+                          symbol
+                          vwap
+                          net_size
+                          buy_order_size
+                          sell_order_size
+                          im_contribution
+                          unrealized_pnl
+                          mark_price
+                          liquidation_price
+                          leverage
+                          im_notional
+                          mm_notional
+                          position_notional
+                          margin_type
+                          liquidation_buffer
+                          liquidation_percentage
+                          portfolio_summary {
+                            portfolio_uuid
+                            collateral
+                            positional_notional
+                            open_positional_notional
+                            unrealized_pnl
+                            pending_fees
+                            borrow
+                            accrued_interest
+                            rolling_debt
+                            portfolio_initial_margin
+                            margin_type
+                            margin_flags
+                            liquidation_status
+                            portfolio_maintenance_margin
+                            liquidation_percentage
+                            liquidation_buffer
+                            buying_power
+                            total_balance
+                          }
+                          asset_image_url
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: '[{"key":"userUuid","value":"{{userUUIDTextBox.value}}"}]'
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-08-29T10:17:33.673Z
+            updatedAt: 2023-10-26T15:59:13.027Z
+      - intxPortfolioSummary:
+          pluginTemplate:
+            id: intxPortfolioSummary
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    query summary($userUuid: String!) {
+                      getIntxPortfolioSummary(input: {user_uuid: $userUuid}) {
+                        summary {
+                          portfolio_uuid
+                          collateral
+                          positional_notional
+                          open_positional_notional
+                          unrealized_pnl
+                          pending_fees
+                          borrow
+                          accrued_interest
+                          rolling_debt
+                          portfolio_initial_margin
+                          margin_type
+                          margin_flags
+                          liquidation_status
+                          portfolio_maintenance_margin
+                          liquidation_percentage
+                          liquidation_buffer
+                          buying_power
+                          total_balance
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: true
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: '[{"key":"userUuid","value":"{{userUUIDTextBox.value}}"}]'
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-08-29T10:43:05.825Z
+            updatedAt: 2023-10-26T15:59:26.309Z
+      - tabbedContainer1:
+          pluginTemplate:
+            id: tabbedContainer1
+            type: widget
+            subtype: TabbedContainerWidget
+            template:
+              ordered:
+                - heightType: fixed
+                - spinWhenChildrenAreFetching: true
+                - unmountInactiveTabs: false
+                - tabNames: >-
+                    ["Onboarding Status", "Portfolio Summary", "Positions",
+                    "User Provisioning"]
+                - selectedTabIndex: 0
+                - selectedTab: '"0"'
+                - showTabBar: true
+                - disableAnimation: false
+                - overflowType: hidden
+                - disabled: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 6.2
+                height: 15.4
+                width: 12
+            createdAt: 2023-10-04T06:10:33.501Z
+            updatedAt: 2023-10-04T06:11:54.065Z
+      - intxAccessLevel:
+          pluginTemplate:
+            id: intxAccessLevel
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: >
+                    query getAccessLevel($userUuid: String!, $userIpAddress:
+                    String!) {
+                      getIntxAccessLevel(input: {user_uuid: $userUuid, scope: SCOPE_INTERNATIONAL, user_ip_address: $userIpAddress}) {
+                        access_level
+                        reason
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userUuid","value":"{{userUUIDTextBox.value}}"},{"key":"userIpAddress","value":"{{ipAddressTextBox.value}}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-10-04T06:13:51.691Z
+            updatedAt: 2023-10-26T15:59:36.160Z
+      - intxOnboardUsers:
+          pluginTemplate:
+            id: intxOnboardUsers
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    mutation onboardUsers($userUuids: [String!]){
+                      intxProvisionOnboardingUsers(input:{user_uuids:$userUuids}){
+                        provision_results{
+                          user_uuid,
+                          provision_result
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: ''
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userUuids","value":"{{ onboardUsersInput.value !=
+                    \"\" ? onboardUsersInput.value.split(\"\\n\") : [] }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-10-04T06:16:12.870Z
+            updatedAt: 2023-10-26T15:59:47.843Z
+      - userUUIDTextBox:
+          pluginTemplate:
+            id: userUUIDTextBox
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 8E528DE6-55F4-435C-B4B6-8A99AE6CE978'
+                - label: User's UUID
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: ''
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 3.6
+                col: 1
+                height: 1
+                width: 5
+            createdAt: 2023-10-04T06:25:20.871Z
+            updatedAt: 2023-10-04T06:28:20.094Z
+      - submitUserUUID:
+          pluginTemplate:
+            id: submitUserUUID
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: ''
+                - hidden: false
+                - text: Submit
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: thunderbolt
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: '{{ipAddressTextBox.value != ""}}'
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: intxAccessLevel
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: intxPortfolioSummary
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: intxPositions
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{userUUIDTextBox.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 4.2
+                col: 7
+                height: 1
+            createdAt: 2023-10-04T06:29:29.796Z
+            updatedAt: 2023-10-04T07:42:56.454Z
+      - onboardingStatusMap:
+          pluginTemplate:
+            id: onboardingStatusMap
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered: []
+                - valueTitle: Value
+                - data: '{{intxAccessLevel.data.getIntxAccessLevel}}'
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - a: true
+                      - b: true
+                      - c: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                - keyTitle: Field
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: tabbedContainer1
+                height: 13.2
+                width: 12
+            createdAt: 2023-10-04T06:33:36.684Z
+            updatedAt: 2023-10-04T06:58:06.293Z
+      - portfolioSummaryMap:
+          pluginTemplate:
+            id: portfolioSummaryMap
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered: []
+                - valueTitle: Value
+                - data: >-
+                    {{intxPortfolioSummary.data.getIntxPortfolioSummary.summary}}
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - a: true
+                      - b: true
+                      - c: true
+                      - statusCode: true
+                      - error: true
+                      - message: true
+                      - data: true
+                      - metadata: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - statusCode
+                    - error
+                    - message
+                    - data
+                    - metadata
+                - keyTitle: Field
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: tabbedContainer1
+                height: 12.8
+                width: 12
+                tabNum: 1
+            createdAt: 2023-10-04T06:58:22.313Z
+            updatedAt: 2023-10-04T07:52:47.725Z
+      - positionsTable:
+          pluginTemplate:
+            id: positionsTable
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - content-encoding: ''
+                      - content-type: ''
+                      - vary: ''
+                      - date: ''
+                      - content-length: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - content-encoding: true
+                      - content-type: true
+                      - vary: true
+                      - date: true
+                      - content-length: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - content-encoding: true
+                      - content-type: true
+                      - vary: true
+                      - date: true
+                      - content-length: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ intxPositions.data.getIntxPositions.positions}}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered: []
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: true
+                - pageSize: 10
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: false
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No rows found
+                - columnEditable:
+                    ordered: []
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: pagination
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - content-encoding
+                    - content-type
+                    - vary
+                    - date
+                    - content-length
+                    - connection
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - content-encoding
+                    - content-type
+                    - vary
+                    - date
+                    - content-length
+                    - connection
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: tabbedContainer1
+                height: 13.4
+                width: 12
+                tabNum: 2
+            createdAt: 2023-10-04T07:23:24.992Z
+            updatedAt: 2023-10-04T07:53:16.146Z
+      - container1:
+          pluginTemplate:
+            id: container1
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: tabbedContainer1
+                row: 0.3999999999999999
+                col: 1
+                height: 6
+                width: 10
+                tabNum: 3
+            createdAt: 2023-10-04T07:29:37.783Z
+            updatedAt: 2023-10-04T07:29:37.783Z
+      - userProvisioningContainer:
+          pluginTemplate:
+            id: userProvisioningContainer
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Onboard users'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-10-04T07:29:37.914Z
+            updatedAt: 2023-10-04T07:30:31.369Z
+      - onboardUsersInput:
+          pluginTemplate:
+            id: onboardUsersInput
+            type: widget
+            subtype: TextAreaWidget
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - autoResize: true
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - hideValidationMessage: false
+                - minLines: 2
+                - validationMessage: ''
+                - showInEditor: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: |-
+                    000-000-0000
+                    111-111-1111
+                    222-222-2222
+                - label: UserUUIDS (enter each on new line)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - maxLines: null
+                - loading: false
+                - disabled: false
+                - labelPosition: top
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                height: 1
+                width: 12
+            createdAt: 2023-10-04T07:31:03.427Z
+            updatedAt: 2023-10-04T07:33:15.296Z
+      - onboardingTable:
+          pluginTemplate:
+            id: onboardingTable
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - id: ''
+                      - name: ''
+                      - email: ''
+                      - sales: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - id: true
+                      - name: true
+                      - email: true
+                      - sales: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - id: true
+                      - name: true
+                      - email: true
+                      - sales: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: >-
+                    {{intxOnboardUsers.data.intxProvisionOnboardingUsers.provision_results}}
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered: []
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: true
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: false
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No rows found
+                - columnEditable:
+                    ordered: []
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: pagination
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 2
+                height: 8
+                width: 12
+            createdAt: 2023-10-04T07:34:23.892Z
+            updatedAt: 2023-10-04T07:53:26.377Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Onbaord Users
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: team
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: intxOnboardUsers
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: false
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 1
+                col: 4
+                height: 1
+            createdAt: 2023-10-04T07:35:31.712Z
+            updatedAt: 2023-10-04T07:37:28.206Z
+      - ipAddressTextBox:
+          pluginTemplate:
+            id: ipAddressTextBox
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: Enter value
+                - label: User's IP Address
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 4.8
+                col: 1
+                height: 1
+                width: 5
+            createdAt: 2023-10-04T07:40:24.341Z
+            updatedAt: 2023-10-04T07:40:57.447Z
+      - $main:
+          pluginTemplate:
+            id: $main
+            type: frame
+            subtype: Frame
+            template:
+              ordered:
+                - type: main
+            style:
+              ordered: []
+            createdAt: 2023-10-26T15:58:58.248Z
+            updatedAt: 2023-10-26T15:58:58.248Z
+  version: 3.2.3

@@ -1,0 +1,2949 @@
+version: 43.0.9
+pageUuid: b0f83794-2ecc-11ed-b38a-533c8cb0ae32
+appTemplate:
+  plugins:
+    ordered:
+      - header:
+          pluginTemplate:
+            id: header
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - horizontalAlign: left
+                - truncateOverflow: false
+                - verticalAlign: center
+                - scrollOverflow: false
+                - tooltipText: ''
+                - value: |
+                    # PRO Migration Dashboard 🥷
+                    Tools to inspect and debug users' migration from PRO to RAT.
+                - style:
+                    ordered:
+                      - primary-text: '#1b5e97ff'
+                      - text-background: rgba(255, 252, 245, 0)
+                - renderAsHtml: true
+                - renderAsMarkdown: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                height: 2.1999999999999997
+                width: 12
+            mobilePosition2:
+              position2:
+                height: 2
+                width: 12
+            createdAt: 2019-01-10T10:23:49.181Z
+            updatedAt: 2022-09-13T14:45:56.977Z
+      - text13:
+          pluginTemplate:
+            id: text13
+            type: widget
+            subtype: TextWidget
+            template:
+              ordered:
+                - horizontalAlign: left
+                - truncateOverflow: false
+                - verticalAlign: center
+                - scrollOverflow: false
+                - tooltipText: ''
+                - value: |-
+                    <style>
+                      ._retool-profilePhoto, img {
+                        border-radius: 4px;
+                      }
+                    </style>
+                - style:
+                    ordered: []
+                - renderAsHtml: true
+                - renderAsMarkdown: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 73.6
+                height: 1
+            mobilePosition2:
+              position2:
+                row: 46
+                col: 9
+                height: 1
+            createdAt: 2019-06-20T01:16:36.367Z
+            updatedAt: 2019-06-27T23:02:34.552Z
+      - spacer1:
+          pluginTemplate:
+            id: spacer1
+            type: widget
+            subtype: SpacerWidget
+            template:
+              ordered:
+                - hidden: false
+                - maintainSpaceWhenHidden: false
+                - showInEditor: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 2.1999999999999984
+                height: 0.9999999999999999
+                width: 12
+            createdAt: 2022-09-07T16:53:30.197Z
+            updatedAt: 2022-09-07T16:53:30.197Z
+      - migration_choices_container:
+          pluginTemplate:
+            id: migration_choices_container
+            type: widget
+            subtype: TabbedContainerWidget
+            template:
+              ordered:
+                - heightType: fixed
+                - spinWhenChildrenAreFetching: true
+                - unmountInactiveTabs: false
+                - style:
+                    ordered:
+                      - primary-background: '#1b5e97ff'
+                      - border-color: '#3c92dc'
+                      - primary-foreground: '#fefbf5ff'
+                      - accent-background: rgba(155, 198, 236, 1)
+                - tabNames: '["Migrate One", "Migrate Multiple"]'
+                - selectedTabIndex: 0
+                - selectedTab: '"0"'
+                - showTabBar: true
+                - disableAnimation: false
+                - overflowType: hidden
+                - disabled: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 2.220446049250313e-15
+                height: 23.599999999999998
+                width: 12
+            createdAt: 2022-09-09T15:05:58.098Z
+            updatedAt: 2022-09-22T19:56:59.168Z
+      - trigger_single_user_migration_button:
+          pluginTemplate:
+            id: trigger_single_user_migration_button
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: |
+                    Migrate This User
+                - showInEditor: false
+                - tooltipText: ''
+                - style:
+                    ordered:
+                      - border: '#3c92dc'
+                      - label: '#3c92dc'
+                - styleVariant: outline
+                - submit: false
+                - iconBefore: play-circle
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query_migrate_single
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{ migrate_single_userId_input.value.length == 0 }}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 6.999999999999997
+                height: 2
+                width: 5
+            createdAt: 2022-09-09T15:09:40.662Z
+            updatedAt: 2022-09-13T15:35:29.200Z
+      - migrate_single_userId_input:
+          pluginTemplate:
+            id: migrate_single_userId_input
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: true
+                - pattern: ''
+                - tooltipText: Enter the userId of the user you wish to migrate.
+                - labelAlign: right
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: |
+                    10
+                - autoFill: ''
+                - placeholder: abc123-456
+                - label: userId
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: user
+                - minLength: '1'
+                - inputTooltip: ''
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: script
+                        - method: run
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered:
+                              - src: query_migrate_single.reset();
+                        - waitType: debounce
+                        - waitMs: '0'
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 0.39999999999999997
+                height: 1
+                width: 5
+            mobilePosition2:
+              position2:
+                container: migration_choices_container
+                row: 0.39999999999999997
+                height: 1
+                width: 7
+            createdAt: 2022-09-09T15:10:59.492Z
+            updatedAt: 2022-09-13T14:51:40.382Z
+      - single_user_migration_help_text:
+          pluginTemplate:
+            id: single_user_migration_help_text
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    ###### Instructions
+
+                    Enter the **userId** for the user you wish to initiate the
+                    migration for and click the **Start Migration** button.
+
+
+                    If you wish to initiate migrations for multiple users,
+                    navigate to the **Migrate Multiple** tab.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 2.4
+                height: 0.6
+                width: 5
+            createdAt: 2022-09-09T15:12:11.674Z
+            updatedAt: 2022-09-12T19:42:44.096Z
+      - query_migrate_single:
+          pluginTemplate:
+            id: query_migrate_single
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |
+                    mutation($userId: ID!) {
+                      runMigrationWorkflow(input: { userId: $userId }) {
+                        userId
+                        workflowId
+                        runId
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: '%RETOOL_EXPOSED_GRAPHQL_HOST%'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userId","value":"{{
+                    migrate_single_userId_input.value }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: Are you sure you want to run this migration?
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    const migratedUser = data["runMigrationWorkflow"];
+
+
+                    return [migratedUser];
+                - events:
+                    - ordered:
+                        - event: success
+                        - type: util
+                        - method: confetti
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: true
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-09-09T15:15:24.582Z
+            updatedAt: 2023-10-26T16:04:59.761Z
+      - query_migrate_multiple:
+          pluginTemplate:
+            id: query_migrate_multiple
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: "mutation($userIds: [ID!]!) {\n  runMigrationWorkflows(input: { userIds: $userIds }) {\n  \tworkflows {\n      userId\n      workflowId\n      runId\n    }\n    failedUserIds\n  }\n}\n"
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: '%RETOOL_EXPOSED_GRAPHQL_HOST%'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userIds","value":"{{
+                    tx_multiple_users_staged_array_data.value }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: >-
+                    Are you sure you want to run this migration for {{
+                    tx_multiple_users_staged_array_data.value.length }} users?
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data["runMigrationWorkflows"];
+                - events:
+                    - ordered:
+                        - method: confetti
+                        - enabled: >-
+                            {{ query_migrate_multiple.data.workflows.length  }}
+                            > 1
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: ''
+                        - waitType: debounce
+                        - event: success
+                        - type: util
+                        - waitMs: '0'
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: true
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-09-12T22:14:02.491Z
+            updatedAt: 2023-10-26T16:05:05.145Z
+      - query_find_user_status:
+          pluginTemplate:
+            id: query_find_user_status
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    query($userId: ID!) {
+                      getProMigrationFlags(input: { userId: $userId }) {
+                        migrationState
+                        depositDisabled
+                        tradeDisabled
+                      }
+                      
+                      getMigrationWorkflowsForUser(input: { userId: $userId }) {
+                        userId
+                        migrations {
+                          dateCreated
+                          failed
+                          workflowId
+                          runId
+                          hadProBalance
+                          successfulTransfers
+                          failedTransfers
+                        }
+                      }
+                      
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: '%RETOOL_EXPOSED_GRAPHQL_HOST%'
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userId","value":"{{
+                    find_user_status_search_input.value }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: >-
+                    Is the userId `{{ find_user_status_search_input.value }}`
+                    the correct ID?
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: false
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: |+
+
+                - events:
+                    - ordered:
+                        - event: success
+                        - type: util
+                        - method: confetti
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: true
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2022-09-23T15:21:33.258Z
+            updatedAt: 2023-10-26T16:05:11.310Z
+      - multiple_migrated_success_table:
+          pluginTemplate:
+            id: multiple_migrated_success_table
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: compact
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths:
+                    - object:
+                        id: userId
+                        value: 196.4921875
+                    - object:
+                        id: runId
+                        value: 210.2578125
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - runId: ''
+                      - userId: ''
+                      - content-encoding: ''
+                      - content-type: ''
+                      - date: ''
+                      - '0': ''
+                      - vary: ''
+                      - Custom Column 1: ''
+                      - Custom Column 2: ''
+                      - Custom Column 3: ''
+                      - Custom Column 4: ''
+                      - workflowId: ''
+                      - Custom Column 5: ''
+                      - content-length: ''
+                      - Custom Column 6: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - runId: true
+                      - userId: true
+                      - content-encoding: true
+                      - content-type: true
+                      - date: true
+                      - '0': true
+                      - vary: true
+                      - workflowId: true
+                      - content-length: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - runId: true
+                      - userId: true
+                      - content-encoding: true
+                      - content-type: true
+                      - date: true
+                      - '0': true
+                      - vary: true
+                      - workflowId: true
+                      - content-length: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - hidden: >-
+                    {{ query_migrate_multiple.data == null ||
+                    query_migrate_multiple.error != null }}
+                - downloadRawData: true
+                - showFetchingIndicator: false
+                - serverPaginated: false
+                - data: '{{ query_migrate_multiple.data.workflows }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - userId: left
+                      - runId: left
+                      - workflowId: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 10
+                - useDynamicColumnSettings: false
+                - style:
+                    ordered:
+                      - selectedRowBackground: rgba(44, 202, 18, 0.16)
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: false
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: false
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: Start a migration. Migrated users will show up here.
+                - columnEditable:
+                    ordered:
+                      - userId: false
+                      - runId: false
+                      - workflowId: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered:
+                      - userId: false
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: pagination
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - content-encoding
+                    - content-type
+                    - vary
+                    - date
+                    - content-length
+                    - connection
+                    - '0'
+                    - userId
+                    - runId
+                    - workflowId
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - content-encoding
+                    - content-type
+                    - vary
+                    - date
+                    - content-length
+                    - connection
+                    - '0'
+                    - userId
+                    - runId
+                    - workflowId
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - maintainSpaceWhenHidden: true
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 5.799999999999995
+                col: 6
+                height: 8.6
+                width: 6
+                tabNum: 1
+            createdAt: 2022-09-12T14:51:42.090Z
+            updatedAt: 2022-09-22T19:49:05.600Z
+      - migrate_multiple_file_input:
+          pluginTemplate:
+            id: migrate_multiple_file_input
+            type: widget
+            subtype: FileDropzoneWidget
+            template:
+              ordered:
+                - parsedValue:
+                    array: []
+                - parseFiles: true
+                - maxSize: ''
+                - appendNewSelection: false
+                - selectionType: single
+                - accept: '[''json'']'
+                - hidden: false
+                - customValidation: ''
+                - maxCount: null
+                - hideValidationMessage: false
+                - validationMessage: ''
+                - showInEditor: false
+                - parsing: false
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value:
+                    array: []
+                - style:
+                    ordered:
+                      - text: '#3c92dc'
+                      - border: hsl(208, 70%, 55%)
+                      - background: '#ffffff'
+                      - activeBorder: rgba(6, 235, 82, 1)
+                - labelCaption: ''
+                - labelWidth: '33'
+                - minSize: ''
+                - placeholder: Select a userIds file.
+                - label: ''
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - files:
+                    array: []
+                - iconBefore: upload
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: script
+                        - method: run
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered:
+                              - src: query_migrate_multiple.reset();
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - disabled: false
+                - labelPosition: top
+                - minCount: null
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                col: 3
+                height: 4.2
+                width: 2
+                tabNum: 1
+            createdAt: 2022-09-12T18:57:46.424Z
+            updatedAt: 2022-09-13T14:52:30.509Z
+      - multiple_user_upload_instructions_text:
+          pluginTemplate:
+            id: multiple_user_upload_instructions_text
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    ###### Instructions
+
+                    You can upload a `.json` file with multiple userIds that you
+                    wish to migrate. The `.json` file must have the following
+                    format:
+
+
+                    ```javascript
+
+                    [
+                      "userId1", "userId2", ...
+                    ]
+
+                    ```
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 8.881784197001252e-16
+                height: 0.6
+                tabNum: 1
+            createdAt: 2022-09-12T18:59:14.009Z
+            updatedAt: 2022-09-12T19:31:50.551Z
+      - tx_multiple_users_staged_tabular_data:
+          pluginTemplate:
+            id: tx_multiple_users_staged_tabular_data
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: "let data = [];\nif ( {{ migrate_multiple_file_input.parseFiles }}) {\n\tconst fileValue = {{ migrate_multiple_file_input.parsedValue[0] }};\n  \n  if (!(fileValue instanceof Array)) {\n    return data;\n  }\n  \n  for (let i = 0; i < fileValue.length; i++) {\n    data.push({ \"userId\": fileValue[i]});\n  }\n}\n\nreturn data;\n"
+                - value: ''
+            createdAt: 2022-09-12T19:17:40.607Z
+            updatedAt: 2022-09-12T22:09:58.478Z
+      - pre_processed_selected_userIds_table:
+          pluginTemplate:
+            id: pre_processed_selected_userIds_table
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: compact
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: true
+                - columnColors:
+                    ordered:
+                      - userId: ''
+                      - Custom Column 1: ''
+                      - id: ''
+                      - name: ''
+                      - email: ''
+                      - sales: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: false
+                - _columnVisibility:
+                    ordered:
+                      - userId: true
+                      - sales: true
+                      - id: true
+                      - name: true
+                      - email: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - userId: true
+                      - sales: true
+                      - id: true
+                      - name: true
+                      - email: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ tx_multiple_users_staged_tabular_data.value }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered: []
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 11
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: false
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: false
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: Upload a file and its users will show up here.
+                - columnEditable:
+                    ordered:
+                      - userId: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: pagination
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - userId
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - userId
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 4.999999999999999
+                height: 8.799999999999999
+                width: 5
+                tabNum: 1
+            createdAt: 2022-09-12T19:19:06.719Z
+            updatedAt: 2022-09-13T15:27:38.674Z
+      - selected_multiple_userIds_label:
+          pluginTemplate:
+            id: selected_multiple_userIds_label
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    ###### Users To Process
+
+                    The following users were loaded from the file you uploaded
+                    and will be processed.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 4.400000000000001
+                height: 0.6
+                width: 5
+                tabNum: 1
+            createdAt: 2022-09-12T19:32:12.773Z
+            updatedAt: 2022-09-12T19:37:48.345Z
+      - trigger_multiple_users_migration_button:
+          pluginTemplate:
+            id: trigger_multiple_users_migration_button
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: |
+                    Migrate Multiple Users
+                - showInEditor: false
+                - tooltipText: ''
+                - style:
+                    ordered:
+                      - border: '#3c92dc'
+                      - label: '#3c92dc'
+                - styleVariant: outline
+                - submit: false
+                - iconBefore: play-circle
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query_migrate_multiple
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{ tx_multiple_users_staged_array_data.value.length === 0 }}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 16.6
+                height: 1.8
+                width: 5
+                tabNum: 1
+            createdAt: 2022-09-12T19:35:40.317Z
+            updatedAt: 2022-09-13T15:38:05.083Z
+      - tx_multiple_users_staged_array_data:
+          pluginTemplate:
+            id: tx_multiple_users_staged_array_data
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: "let data = [];\nif ( {{ migrate_multiple_file_input.parseFiles }}) {\n\tconst fileValue = {{ migrate_multiple_file_input.parsedValue[0] }};\n  \n  if (!(fileValue instanceof Array)) {\n    return data;\n  }\n  \n  data = fileValue;\n}\n\nreturn data;\n"
+                - value: ''
+            createdAt: 2022-09-12T22:17:16.453Z
+            updatedAt: 2022-09-13T15:07:37.247Z
+      - divider1:
+          pluginTemplate:
+            id: divider1
+            type: widget
+            subtype: DividerWidget
+            template:
+              ordered:
+                - hidden: false
+                - maintainSpaceWhenHidden: false
+                - showInEditor: false
+                - tooltipText: ''
+                - horizontalAlign: center
+                - text: ''
+                - textSize: default
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 6.2
+                col: 1
+                height: 0.2
+            createdAt: 2022-09-12T23:47:30.880Z
+            updatedAt: 2022-09-12T23:47:30.880Z
+      - migrate_single_success_alert:
+          pluginTemplate:
+            id: migrate_single_success_alert
+            type: widget
+            subtype: AlertWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - hidden: >-
+                    {{ query_migrate_single.data == null ||
+                    query_migrate_single.error != null }}
+                - exportFileType: csv
+                - buttonType: action
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - title: Success
+                - type: success
+                - exportFileName: ''
+                - description: >-
+                    The migration for user "{{
+                    query_migrate_single.data[0].userId }}" was successfully
+                    kicked off.
+                - maintainSpaceWhenHidden: false
+                - buttonText: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 0.3999999999999993
+                col: 6
+                height: 1.6
+                width: 5
+            createdAt: 2022-09-12T23:50:13.239Z
+            updatedAt: 2022-09-22T19:54:21.048Z
+      - state1:
+          pluginTemplate:
+            id: state1
+            type: state
+            subtype: State
+            template:
+              ordered:
+                - _persistedValueGetter: null
+                - _persistedValueSetter: null
+                - persistValue: false
+                - persistedValueKey: ''
+                - value: null
+            createdAt: 2022-09-12T23:57:51.546Z
+            updatedAt: 2022-09-13T16:19:20.230Z
+            folder: Temporary state
+      - state2:
+          pluginTemplate:
+            id: state2
+            type: state
+            subtype: State
+            template:
+              ordered:
+                - _persistedValueGetter: null
+                - _persistedValueSetter: null
+                - persistValue: false
+                - persistedValueKey: ''
+                - value: null
+            createdAt: 2022-09-12T23:58:23.525Z
+            updatedAt: 2022-09-13T16:19:20.248Z
+            folder: Temporary state
+      - multiple_migration_statistics:
+          pluginTemplate:
+            id: multiple_migration_statistics
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: >-
+                    {{ query_migrate_multiple.data == null ||
+                    query_migrate_multiple.error != null }}
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    #### Migration Statistics
+
+                    > **Successfully Migrated** - {{
+                    query_migrate_multiple.data.workflows.length }} users.
+
+
+                    > **Failed Migration** - {{
+                    query_migrate_multiple.data.failedUserIds.length }} users.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 2.6
+                col: 6
+                height: 0.6
+                tabNum: 1
+            createdAt: 2022-09-13T14:23:15.932Z
+            updatedAt: 2022-09-22T19:48:40.793Z
+      - multiple_migrated_success_header:
+          pluginTemplate:
+            id: multiple_migrated_success_header
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: >-
+                    {{ query_migrate_multiple.data == null ||
+                    query_migrate_multiple.error != null }}
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '###### Successfully Migrated Users'
+                - style:
+                    ordered:
+                      - color: rgba(0, 158, 53, 1)
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 4.8
+                col: 6
+                height: 0.6
+                tabNum: 1
+            createdAt: 2022-09-13T14:33:40.534Z
+            updatedAt: 2022-09-22T19:48:51.509Z
+      - multiple_migrated_users_fail_header:
+          pluginTemplate:
+            id: multiple_migrated_users_fail_header
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: >-
+                    {{ query_migrate_multiple.data == null ||
+                    query_migrate_multiple.error != null }}
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '###### Failed Migration Users'
+                - style:
+                    ordered:
+                      - color: '#c74438ff'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 14.799999999999999
+                col: 6
+                height: 0.6
+                tabNum: 1
+            createdAt: 2022-09-13T14:35:21.629Z
+            updatedAt: 2022-09-22T19:49:12.219Z
+      - multiple_migrated_users_fail_table:
+          pluginTemplate:
+            id: multiple_migrated_users_fail_table
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: compact
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths:
+                    - object:
+                        id: userId
+                        value: 171.49371337890625
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - runId: ''
+                      - userId: ''
+                      - content-encoding: ''
+                      - content-type: ''
+                      - date: ''
+                      - '0': ''
+                      - vary: ''
+                      - Custom Column 1: ''
+                      - Custom Column 2: ''
+                      - Custom Column 3: ''
+                      - Custom Column 4: ''
+                      - workflowId: ''
+                      - Custom Column 5: ''
+                      - content-length: ''
+                      - Custom Column 6: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered: []
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - runId: true
+                      - userId: true
+                      - content-encoding: true
+                      - content-type: true
+                      - date: true
+                      - '0': true
+                      - vary: true
+                      - workflowId: true
+                      - content-length: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - runId: true
+                      - userId: true
+                      - content-encoding: true
+                      - content-type: true
+                      - date: true
+                      - '0': true
+                      - vary: true
+                      - workflowId: true
+                      - content-length: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - hidden: >-
+                    {{ query_migrate_multiple.data == null ||
+                    query_migrate_multiple.error != null }}
+                - downloadRawData: true
+                - showFetchingIndicator: false
+                - serverPaginated: false
+                - data: '{{ tx_multiple_users_failed_users_tabular_data.value }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - userId: left
+                      - runId: left
+                      - workflowId: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 4
+                - useDynamicColumnSettings: false
+                - style:
+                    ordered:
+                      - selectedRowBackground: rgba(199, 68, 56, 0.23)
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: false
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: false
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: Users that failed the migration show up here.
+                - columnEditable:
+                    ordered:
+                      - userId: false
+                      - runId: false
+                      - workflowId: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered:
+                      - userId: false
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: pagination
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - content-encoding
+                    - content-type
+                    - vary
+                    - date
+                    - content-length
+                    - connection
+                    - '0'
+                    - userId
+                    - runId
+                    - workflowId
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - content-encoding
+                    - content-type
+                    - vary
+                    - date
+                    - content-length
+                    - connection
+                    - '0'
+                    - userId
+                    - runId
+                    - workflowId
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - maintainSpaceWhenHidden: true
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: true
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 15.799999999999999
+                col: 6
+                height: 4.8
+                tabNum: 1
+            createdAt: 2022-09-13T14:36:33.303Z
+            updatedAt: 2022-09-22T19:49:18.200Z
+      - divider2:
+          pluginTemplate:
+            id: divider2
+            type: widget
+            subtype: DividerWidget
+            template:
+              ordered:
+                - hidden: false
+                - maintainSpaceWhenHidden: false
+                - showInEditor: false
+                - tooltipText: ''
+                - horizontalAlign: center
+                - text: ''
+                - textSize: default
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 15.4
+                height: 0.2
+                width: 5
+                tabNum: 1
+            createdAt: 2022-09-13T15:16:00.980Z
+            updatedAt: 2022-09-13T15:16:00.980Z
+      - tx_multiple_users_failed_users_tabular_data:
+          pluginTemplate:
+            id: tx_multiple_users_failed_users_tabular_data
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: >-
+                    // Tip: assign your external references to variables instead
+                    of chaining off the curly brackets. 
+
+
+                    let data = [];
+
+                    if ({{ query_migrate_multiple.data }} != null) {
+                      const failedUserIds = {{ query_migrate_multiple.data.failedUserIds }};
+                      for (let i = 0; i < failedUserIds.length; i++) {
+                        data.push({ userId: failedUserIds[i] });
+                      }
+                    }
+
+
+                    return data;
+                - value: ''
+            createdAt: 2022-09-13T15:26:58.395Z
+            updatedAt: 2022-09-13T15:30:17.887Z
+      - migrate_single_failure_alert:
+          pluginTemplate:
+            id: migrate_single_failure_alert
+            type: widget
+            subtype: AlertWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - hidden: >-
+                    {{ query_migrate_single.error == null ||
+                    query_migrate_single.statusCode == 200 }}
+                - exportFileType: csv
+                - buttonType: action
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - title: Something Went Wrong
+                - type: error
+                - exportFileName: ''
+                - description: Errors occurred while trying to migrate this user.
+                - buttonText: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 3
+                col: 6
+                height: 1.8
+                width: 5
+            createdAt: 2022-09-13T16:15:37.652Z
+            updatedAt: 2022-09-20T18:25:10.575Z
+      - migrate_single_failure_gql_errors:
+          pluginTemplate:
+            id: migrate_single_failure_gql_errors
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: >-
+                    {{ query_migrate_single.error == null ||
+                    query_migrate_single.statusCode == 200 }}
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: |-
+                    ###### Errors
+                    ```{{ query_migrate_single.error }}```
+                - style:
+                    ordered:
+                      - background: '#ffffff'
+                      - color: rgba(252, 5, 5, 0.6)
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 4.8
+                col: 6
+                height: 0.6
+                width: 5
+            createdAt: 2022-09-20T17:04:54.535Z
+            updatedAt: 2022-09-20T18:25:25.396Z
+      - migrate_multiple_failure_alert:
+          pluginTemplate:
+            id: migrate_multiple_failure_alert
+            type: widget
+            subtype: AlertWidget
+            template:
+              ordered:
+                - valueToCopy: ''
+                - internalUrlHashParams: ''
+                - hidden: >-
+                    {{ query_migrate_multiple.error == null ||
+                    query_migrate_multiple.statusCode == 200 }}
+                - exportFileType: csv
+                - buttonType: action
+                - url: ''
+                - newWindow: false
+                - exportQuery: ''
+                - action: ''
+                - internalUrlQuery: ''
+                - internalUrlPath: ''
+                - title: Something Went Wrong
+                - type: error
+                - exportFileName: ''
+                - description: Unexpected errors occurred while trying to migrate users.
+                - buttonText: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                col: 6
+                height: 1.8
+                width: 5
+                tabNum: 1
+            createdAt: 2022-09-20T17:32:01.740Z
+            updatedAt: 2022-09-20T18:25:47.503Z
+      - migrate_multiple_failure_gql_errors:
+          pluginTemplate:
+            id: migrate_multiple_failure_gql_errors
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: >-
+                    {{ query_migrate_multiple.error == null ||
+                    query_migrate_multiple.statusCode == 200 }}
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: |-
+                    ###### Errors
+                    ```{{ query_migrate_multiple.error }}```
+                - style:
+                    ordered:
+                      - background: '#ffffff'
+                      - color: rgba(252, 5, 5, 0.6)
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 2
+                col: 6
+                height: 0.6
+                width: 5
+                tabNum: 1
+            createdAt: 2022-09-20T17:33:16.675Z
+            updatedAt: 2022-09-20T18:25:53.512Z
+      - migrate_single_user_migration_result:
+          pluginTemplate:
+            id: migrate_single_user_migration_result
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered:
+                      - a: Run ID
+                      - b: Workflow ID
+                - rowFormats:
+                    ordered: []
+                - valueTitle: ''
+                - hidden: >-
+                    {{ query_migrate_single.data == null ||
+                    query_migrate_single.error != null }}
+                - data: '{{ tx_single_user_response_key_val.value }}'
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - queryRefreshTime: true
+                      - paginationLimit: true
+                      - a: true
+                      - b: true
+                      - body: true
+                      - lastReceivedFromResourceAt: true
+                      - queryDisabledMessage: true
+                      - c: true
+                      - successMessage: true
+                      - queryDisabled: true
+                      - playgroundQuerySaveId: true
+                      - resourceNameOverride: true
+                      - runId: true
+                      - userId: true
+                      - runWhenModelUpdates: true
+                      - paginationPaginationField: true
+                      - headers: true
+                      - showFailureToaster: true
+                      - paginationEnabled: true
+                      - query: true
+                      - playgroundQueryUuid: true
+                      - playgroundQueryId: true
+                      - error: true
+                      - runWhenPageLoadsDelay: true
+                      - data: true
+                      - errors: true
+                      - pluginType: true
+                      - isImported: true
+                      - graphQLVariables: true
+                      - showSuccessToaster: true
+                      - cacheKeyTtl: true
+                      - requestSentTimestamp: true
+                      - cookies: true
+                      - metadata: true
+                      - queryRunTime: true
+                      - changesetObject: true
+                      - errorTransformer: true
+                      - finished: true
+                      - confirmationMessage: true
+                      - isFetching: true
+                      - changeset: true
+                      - rawData: true
+                      - queryTriggerDelay: true
+                      - graphQLErrors: true
+                      - enableErrorTransformer: true
+                      - showLatestVersionUpdatedWarning: true
+                      - paginationDataField: true
+                      - timestamp: true
+                      - enableTransformer: true
+                      - showUpdateSetValueDynamicallyToggle: true
+                      - runWhenPageLoads: true
+                      - transformer: true
+                      - events: true
+                      - queryTimeout: true
+                      - workflowId: true
+                      - requireConfirmation: true
+                      - type: true
+                      - queryFailureConditions: true
+                      - id: true
+                      - namespace: true
+                      - changesetIsObject: true
+                      - enableCaching: true
+                      - bodyType: true
+                      - queryThrottleTime: true
+                      - updateSetValueDynamically: true
+                      - notificationDuration: true
+                - prevRowFormats:
+                    ordered: []
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - pluginType
+                    - namespace
+                    - data
+                    - queryRefreshTime
+                    - paginationLimit
+                    - body
+                    - lastReceivedFromResourceAt
+                    - queryDisabledMessage
+                    - successMessage
+                    - queryDisabled
+                    - playgroundQuerySaveId
+                    - resourceNameOverride
+                    - runWhenModelUpdates
+                    - paginationPaginationField
+                    - headers
+                    - showFailureToaster
+                    - paginationEnabled
+                    - query
+                    - playgroundQueryUuid
+                    - playgroundQueryId
+                    - runWhenPageLoadsDelay
+                    - isImported
+                    - graphQLVariables
+                    - showSuccessToaster
+                    - cacheKeyTtl
+                    - cookies
+                    - metadata
+                    - changesetObject
+                    - errorTransformer
+                    - confirmationMessage
+                    - isFetching
+                    - changeset
+                    - rawData
+                    - queryTriggerDelay
+                    - graphQLErrors
+                    - enableErrorTransformer
+                    - showLatestVersionUpdatedWarning
+                    - paginationDataField
+                    - timestamp
+                    - enableTransformer
+                    - showUpdateSetValueDynamicallyToggle
+                    - runWhenPageLoads
+                    - transformer
+                    - events
+                    - queryTimeout
+                    - requireConfirmation
+                    - type
+                    - queryFailureConditions
+                    - changesetIsObject
+                    - enableCaching
+                    - bodyType
+                    - queryThrottleTime
+                    - updateSetValueDynamically
+                    - notificationDuration
+                    - id
+                    - error
+                    - requestSentTimestamp
+                    - finished
+                    - queryRunTime
+                    - errors
+                    - userId
+                    - workflowId
+                    - runId
+                - keyTitle: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 5.6
+                col: 6
+                height: 2.6
+                width: 4
+            createdAt: 2022-09-21T18:58:11.257Z
+            updatedAt: 2022-09-21T19:05:57.051Z
+      - text23:
+          pluginTemplate:
+            id: text23
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: >-
+                    {{ query_migrate_single.data == null ||
+                    query_migrate_single.error != null }}
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '###### Migration Details'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: migration_choices_container
+                row: 2.4
+                col: 6
+                height: 0.6
+            createdAt: 2022-09-21T18:58:20.754Z
+            updatedAt: 2022-09-21T19:05:43.214Z
+      - tx_single_user_response_key_val:
+          pluginTemplate:
+            id: tx_single_user_response_key_val
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: return {{ query_migrate_single.data[0] }}
+                - value: ''
+            createdAt: 2022-09-21T19:02:16.239Z
+            updatedAt: 2022-09-21T19:05:31.305Z
+      - search_container:
+          pluginTemplate:
+            id: search_container
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 3.2
+                height: 6
+                width: 12
+            createdAt: 2022-09-22T19:50:14.582Z
+            updatedAt: 2022-09-22T19:50:14.582Z
+      - search_header:
+          pluginTemplate:
+            id: search_header
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: |-
+                    ### Search
+                    > Search for a user's migration status.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2022-09-22T19:50:14.742Z
+            updatedAt: 2022-09-22T19:50:51.841Z
+      - container1:
+          pluginTemplate:
+            id: container1
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 11.399999999999999
+                height: 6
+                width: 12
+            createdAt: 2022-09-22T19:51:59.165Z
+            updatedAt: 2022-09-22T19:51:59.165Z
+      - containerTitle1:
+          pluginTemplate:
+            id: containerTitle1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: |-
+                    ### Migrate Pro => RAT
+                    > Migrate a user or multiple users from Pro to RAT.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2022-09-22T19:51:59.375Z
+            updatedAt: 2022-09-22T19:52:53.727Z
+      - find_user_status_search_input:
+          pluginTemplate:
+            id: find_user_status_search_input
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: true
+                - pattern: ''
+                - tooltipText: Enter the userId of the user you wish to search for.
+                - labelAlign: right
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: |
+                    10
+                - autoFill: ''
+                - placeholder: abc123-456
+                - label: userId
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: user
+                - minLength: '1'
+                - inputTooltip: ''
+                - events:
+                    - ordered:
+                        - event: change
+                        - type: script
+                        - method: run
+                        - pluginId: ''
+                        - targetId: null
+                        - params:
+                            ordered:
+                              - src: query_find_user_status.reset();
+                        - waitType: debounce
+                        - waitMs: '0'
+                    - ordered:
+                        - event: submit
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query_find_user_status
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                height: 1
+                width: 6
+            createdAt: 2022-09-23T15:02:06.946Z
+            updatedAt: 2022-09-23T15:52:03.889Z
+      - find_user_status_migration_state_header:
+          pluginTemplate:
+            id: find_user_status_migration_state_header
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    ###### Current Migration State
+
+                    > The current migration state of the user along with states
+                    of various features on Pro that were amended to perform a
+                    migration.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 5.2
+                height: 0.6
+                width: 4
+            createdAt: 2022-09-23T15:02:50.192Z
+            updatedAt: 2022-09-23T15:34:51.445Z
+      - find_user_status_triggered_migrations_results_table:
+          pluginTemplate:
+            id: find_user_status_triggered_migrations_results_table
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths:
+                    - object:
+                        id: Date Triggered
+                        value: 151.9296875
+                    - object:
+                        id: Succeeded
+                        value: 91
+                    - object:
+                        id: Run ID
+                        value: 84
+                    - object:
+                        id: Workflow ID
+                        value: 93
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered: []
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - Succeeded: ''
+                      - Date Triggered: ''
+                      - '# Transfer Succeeded': ''
+                      - name: ''
+                      - sales: ''
+                      - Run ID: ''
+                      - '# Transfers Failed': ''
+                      - Had Pro Balance: ''
+                      - Custom Column 1: ''
+                      - id: ''
+                      - Workflow ID: ''
+                      - email: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - Date Triggered: datetime
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - Succeeded: true
+                      - Date Triggered: true
+                      - '# Transfer Succeeded': true
+                      - name: true
+                      - sales: true
+                      - Run ID: true
+                      - '# Transfers Failed': true
+                      - Had Pro Balance: true
+                      - id: true
+                      - Workflow ID: true
+                      - email: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - Succeeded: true
+                      - Date Triggered: true
+                      - '# Transfer Succeeded': true
+                      - name: true
+                      - sales: true
+                      - Run ID: true
+                      - '# Transfers Failed': true
+                      - Had Pro Balance: true
+                      - id: true
+                      - Workflow ID: true
+                      - email: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ tx_find_user_status_past_migrations.value }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: Date Triggered
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - Date Triggered: right
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: true
+                - pageSize: 6
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: false
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: >-
+                    Migrations that were triggered for the queried user will
+                    show up here.
+                - columnEditable:
+                    ordered:
+                      - Custom Column 1: true
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: pagination
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - Date Triggered
+                    - Succeeded
+                    - Workflow ID
+                    - Run ID
+                    - Had Pro Balance
+                    - '# Transfer Succeeded'
+                    - '# Transfers Failed'
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - id
+                    - name
+                    - email
+                    - sales
+                    - Date Triggered
+                    - Succeeded
+                    - Workflow ID
+                    - Run ID
+                    - Had Pro Balance
+                    - '# Transfer Succeeded'
+                    - '# Transfers Failed'
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 7.6000000000000005
+                col: 5
+                height: 9
+                width: 6
+            createdAt: 2022-09-23T15:04:28.252Z
+            updatedAt: 2022-09-23T17:10:57.100Z
+      - find_user_status_triggered_migrations_header:
+          pluginTemplate:
+            id: find_user_status_triggered_migrations_header
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: |-
+                    ###### Triggered Migrations
+                    > All the migrations that were attempted for this user.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 5.2
+                col: 5
+                height: 0.6
+                width: 5
+            createdAt: 2022-09-23T15:24:54.304Z
+            updatedAt: 2022-09-23T15:34:13.451Z
+      - find_user_status_current_state_keyval:
+          pluginTemplate:
+            id: find_user_status_current_state_keyval
+            type: widget
+            subtype: KeyValueMapWidget
+            template:
+              ordered:
+                - rowHeaderNames:
+                    ordered: []
+                - rowFormats:
+                    ordered:
+                      - Deposits Disabled: boolean
+                      - Trading Disabled: boolean
+                - valueTitle: ''
+                - data: '{{ tx_find_user_status_migration_flags.value }}'
+                - prevRowMappers:
+                    ordered: []
+                - rowMappersRenderAsHTML:
+                    ordered: []
+                - rowVisibility:
+                    ordered:
+                      - tradeDisabled: true
+                      - a: true
+                      - b: true
+                      - c: true
+                      - migrationState: true
+                      - Deposits Disabled: true
+                      - depositDisabled: true
+                      - Trading Disabled: true
+                      - Migration State: true
+                - prevRowFormats:
+                    ordered:
+                      - Deposits Disabled: boolean
+                      - Trading Disabled: boolean
+                - rowMappers:
+                    ordered: []
+                - rows:
+                    - a
+                    - b
+                    - c
+                    - migrationState
+                    - depositDisabled
+                    - tradeDisabled
+                    - Migration State
+                    - Deposits Disabled
+                    - Trading Disabled
+                - keyTitle: ''
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 7.800000000000001
+                height: 2.8
+                width: 4
+            createdAt: 2022-09-23T15:25:17.815Z
+            updatedAt: 2022-09-23T17:04:13.443Z
+      - find_user_status_instructions:
+          pluginTemplate:
+            id: find_user_status_instructions
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    ###### Instructions
+
+                    Enter the `userId` of the user you want to find information
+                    for.
+                - style:
+                    ordered:
+                      - color: '#6a6a6a'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 1.8
+                height: 0.6
+                width: 8
+            createdAt: 2022-09-23T15:27:39.757Z
+            updatedAt: 2022-09-23T15:28:29.514Z
+      - divider3:
+          pluginTemplate:
+            id: divider3
+            type: widget
+            subtype: DividerWidget
+            template:
+              ordered:
+                - hidden: false
+                - maintainSpaceWhenHidden: false
+                - showInEditor: false
+                - tooltipText: ''
+                - horizontalAlign: center
+                - text: ''
+                - textSize: default
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 3.6
+                height: 0.2
+                width: 8
+            createdAt: 2022-09-23T15:29:17.456Z
+            updatedAt: 2022-09-23T15:29:17.456Z
+      - find_user_status_results_header:
+          pluginTemplate:
+            id: find_user_status_results_header
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Discovered Data'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                row: 4.2
+                height: 0.6
+            createdAt: 2022-09-23T15:29:30.272Z
+            updatedAt: 2022-09-23T15:29:55.071Z
+      - spacer2:
+          pluginTemplate:
+            id: spacer2
+            type: widget
+            subtype: SpacerWidget
+            template:
+              ordered:
+                - hidden: false
+                - maintainSpaceWhenHidden: false
+                - showInEditor: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 9.200000000000001
+                height: 2.2
+                width: 12
+            createdAt: 2022-09-23T15:36:13.492Z
+            updatedAt: 2022-09-23T15:36:13.492Z
+      - find_user_status_button:
+          pluginTemplate:
+            id: find_user_status_button
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Find User
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: search
+                - events:
+                    - ordered:
+                        - event: click
+                        - type: datasource
+                        - method: trigger
+                        - pluginId: query_find_user_status
+                        - targetId: null
+                        - params:
+                            ordered: []
+                        - waitType: debounce
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: false
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: search_container
+                col: 6
+                height: 1
+                width: 2
+            createdAt: 2022-09-23T15:43:40.927Z
+            updatedAt: 2022-09-23T15:44:38.415Z
+      - tx_find_user_status_migration_flags:
+          pluginTemplate:
+            id: tx_find_user_status_migration_flags
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: >
+                    const migrationFlags = {{
+                    query_find_user_status.data["getProMigrationFlags"] }}
+
+                    return {
+                      "Migration State": migrationFlags["migrationState"],
+                      "Deposits Disabled": migrationFlags["depositDisabled"],
+                      "Trading Disabled": migrationFlags["tradeDisabled"],
+                    };
+                - value: ''
+            createdAt: 2022-09-23T15:44:51.586Z
+            updatedAt: 2022-09-23T15:47:44.140Z
+      - tx_find_user_status_past_migrations:
+          pluginTemplate:
+            id: tx_find_user_status_past_migrations
+            type: function
+            subtype: Function
+            template:
+              ordered:
+                - funcBody: "const migrations = {{ query_find_user_status.data[\"getMigrationWorkflowsForUser\"].migrations }};\n\nlet cleanedMigrations = [];\nfor (i = 0; i < migrations.length; i++) {\n  let migration = migrations[i];\n  \n  let cleaned = {\n      \"Date Triggered\": migration[\"dateCreated\"],\n      \"Succeeded\": !(migration[\"failed\"]),\n     \t\"Workflow ID\": migration[\"workflowId\"],\n      \"Run ID\": migration[\"runId\"],\n      \"Had Pro Balance\": migration[\"hadProBalance\"],\n      \"# Transfer Succeeded\": migration[\"successfulTransfers\"],\n      \"# Transfers Failed\": migration[\"failedTransfers\"]\n\t};\n  \n  cleanedMigrations.push(cleaned);\n}\n\nreturn cleanedMigrations;\n"
+                - value: ''
+            createdAt: 2022-09-23T16:40:29.889Z
+            updatedAt: 2022-09-23T17:09:22.184Z
+      - $main:
+          pluginTemplate:
+            id: $main
+            type: frame
+            subtype: Frame
+            template:
+              ordered:
+                - type: main
+            style:
+              ordered: []
+            createdAt: 2023-10-26T16:04:47.355Z
+            updatedAt: 2023-10-26T16:04:47.355Z
+  folders:
+    - Temporary state
+  version: 3.2.3

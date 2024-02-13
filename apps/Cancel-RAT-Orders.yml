@@ -1,0 +1,2099 @@
+version: 43.0.9
+pageUuid: 7d3c5686-e7bf-11ed-9956-bbdf2fa013dd
+appTemplate:
+  plugins:
+    ordered:
+      - query1:
+          pluginTemplate:
+            id: query1
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |-
+                    query orders($userID: String!, $orderIDs: [String]) {
+                       cancelRATOrders(input: {
+                        userId: $userID,
+                        orderIds: $orderIDs
+                      }) {
+                        response {
+                          orderId
+                          success
+                          failureReason
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"userID","value":"{{
+                    textInput1.value}}"},{"key":"orderIDs","value":"{{
+                    textArea1.value != \"\" ? textArea1.value.split(\"\\n\") :
+                    [] }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data.cancelRATOrders.response
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-05-01T01:28:35.776Z
+            updatedAt: 2023-10-26T16:03:09.427Z
+      - container1:
+          pluginTemplate:
+            id: container1
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                height: 6
+                width: 12
+            createdAt: 2023-05-01T01:29:10.611Z
+            updatedAt: 2023-05-01T01:29:10.611Z
+      - containerTitle1:
+          pluginTemplate:
+            id: containerTitle1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Cancel A Single User''s RAT Orders'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-05-01T01:29:10.682Z
+            updatedAt: 2023-05-08T17:12:59.223Z
+      - textInput1:
+          pluginTemplate:
+            id: textInput1
+            type: widget
+            subtype: TextInputWidget2
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - iconAfter: ''
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - patternType: ''
+                - hideValidationMessage: false
+                - textBefore: ''
+                - validationMessage: ''
+                - textAfter: ''
+                - showInEditor: false
+                - showClear: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: ''
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: 'ex: 123-26271-37383'
+                - label: User ID or UUID (accepts either)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - iconBefore: ''
+                - minLength: null
+                - inputTooltip: ''
+                - events: []
+                - autoCapitalize: none
+                - loading: false
+                - disabled: false
+                - labelPosition: left
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                height: 1
+                width: 8
+            createdAt: 2023-05-01T01:29:10.703Z
+            updatedAt: 2023-05-01T01:29:10.703Z
+      - table1:
+          pluginTemplate:
+            id: table1
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - success: ''
+                      - filledSize: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - fee: ''
+                      - content-encoding: ''
+                      - orderConfiguration: ''
+                      - endTime: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - x-frame-options: ''
+                      - assetPair: ''
+                      - productId: ''
+                      - content-security-policy: ''
+                      - postOnly: ''
+                      - content-type: ''
+                      - failureReason: ''
+                      - limitPrice: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - filledValue: ''
+                      - quoteQuantityRemaining: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - createdTime: ''
+                      - Custom Column 1: ''
+                      - side: ''
+                      - Custom Column 2: ''
+                      - Custom Column 3: ''
+                      - timeInForce: ''
+                      - Custom Column 4: ''
+                      - Custom Column 5: ''
+                      - content-length: ''
+                      - baseQuantityRemaining: ''
+                      - Custom Column 6: ''
+                      - Custom Column 7: ''
+                      - quoteSize: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - success: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - failureReason: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - success: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - failureReason: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: false
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query1.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: false
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                      - Custom Column 2: false
+                      - Custom Column 3: false
+                      - Custom Column 4: false
+                      - Custom Column 5: false
+                      - Custom Column 6: false
+                      - Custom Column 7: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - success
+                    - failureReason
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - success
+                    - failureReason
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 5.2
+                height: 8.6
+                width: 12
+            createdAt: 2023-05-01T01:29:10.836Z
+            updatedAt: 2023-05-03T01:11:55.554Z
+      - button1:
+          pluginTemplate:
+            id: button1
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Cancel Orders
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: '{{ textArea1.value != ""}}'
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query1
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{ textInput1.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 3.6
+                height: 1.2
+            createdAt: 2023-05-01T01:29:10.893Z
+            updatedAt: 2023-05-08T17:17:48.508Z
+      - textArea1:
+          pluginTemplate:
+            id: textArea1
+            type: widget
+            subtype: TextAreaWidget
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - autoResize: true
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - hideValidationMessage: false
+                - minLines: 2
+                - validationMessage: ''
+                - showInEditor: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: |-
+                    000-000-0000
+                    111-111-1111
+                    222-222-2222
+                - label: Order UUIDs (enter each on new line)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - maxLines: '100'
+                - loading: false
+                - disabled: false
+                - labelPosition: top
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 1.200000000000001
+                height: 1
+                width: 5
+            createdAt: 2023-05-02T20:30:01.968Z
+            updatedAt: 2023-05-02T20:30:01.968Z
+      - container2:
+          pluginTemplate:
+            id: container2
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 15.8
+                height: 6
+                width: 12
+            createdAt: 2023-05-08T17:13:17.518Z
+            updatedAt: 2023-05-08T17:13:17.518Z
+      - containerTitle2:
+          pluginTemplate:
+            id: containerTitle2
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Cancel Multiple Users RAT Orders'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-05-08T17:13:17.620Z
+            updatedAt: 2023-05-08T17:13:39.979Z
+      - table2:
+          pluginTemplate:
+            id: table2
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - success: ''
+                      - filledSize: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - fee: ''
+                      - content-encoding: ''
+                      - orderConfiguration: ''
+                      - endTime: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - x-frame-options: ''
+                      - assetPair: ''
+                      - productId: ''
+                      - content-security-policy: ''
+                      - postOnly: ''
+                      - content-type: ''
+                      - failureReason: ''
+                      - limitPrice: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - filledValue: ''
+                      - quoteQuantityRemaining: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - createdTime: ''
+                      - Custom Column 1: ''
+                      - side: ''
+                      - Custom Column 2: ''
+                      - Custom Column 3: ''
+                      - timeInForce: ''
+                      - Custom Column 4: ''
+                      - Custom Column 5: ''
+                      - content-length: ''
+                      - baseQuantityRemaining: ''
+                      - Custom Column 6: ''
+                      - Custom Column 7: ''
+                      - quoteSize: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - success: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - failureReason: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - x-permitted-cross-domain-policies: true
+                      - success: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - failureReason: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query2.data }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                      - Custom Column 2: false
+                      - Custom Column 3: false
+                      - Custom Column 4: false
+                      - Custom Column 5: false
+                      - Custom Column 6: false
+                      - Custom Column 7: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - success
+                    - failureReason
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - success
+                    - failureReason
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                row: 4
+                height: 8.6
+                width: 12
+            createdAt: 2023-05-08T17:13:17.680Z
+            updatedAt: 2023-05-08T20:50:42.944Z
+      - button2:
+          pluginTemplate:
+            id: button2
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Cancel Orders
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: '{{ textArea2.value != ""}}'
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query2
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{ textArea2.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                row: 2.4000000000000004
+                height: 1.2
+            createdAt: 2023-05-08T17:13:17.760Z
+            updatedAt: 2023-05-08T17:17:38.685Z
+      - textArea2:
+          pluginTemplate:
+            id: textArea2
+            type: widget
+            subtype: TextAreaWidget
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - autoResize: true
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - hideValidationMessage: false
+                - minLines: 2
+                - validationMessage: ''
+                - showInEditor: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: |-
+                    000-000-0000
+                    111-111-1111
+                    222-222-2222
+                - label: Order UUIDs (enter each on new line)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - maxLines: '100'
+                - loading: false
+                - disabled: false
+                - labelPosition: top
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container2
+                height: 1
+                width: 5
+            createdAt: 2023-05-08T17:13:17.791Z
+            updatedAt: 2023-05-08T17:13:17.791Z
+      - query2:
+          pluginTemplate:
+            id: query2
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |
+                    query orders($orderIDs: [String]) {
+                      cancelRATOrders(input: {userId: "", orderIds: $orderIDs}) {
+                        response {
+                          orderId
+                          success
+                          failureReason
+                        }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"orderIDs","value":"{{ textArea2.value != \"\" ?
+                    textArea2.value.split(\"\\n\") : [] }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data.cancelRATOrders.response
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-05-08T17:14:02.847Z
+            updatedAt: 2023-10-26T16:03:19.160Z
+      - text1:
+          pluginTemplate:
+            id: text1
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: >-
+                    If you'd like all of a user's orders to be cancelled, leave
+                    this box blank. All open RAT orders will be cancelled.
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container1
+                row: 1.6
+                col: 5
+                height: 0.6
+            createdAt: 2023-05-08T17:15:30.126Z
+            updatedAt: 2023-05-08T17:16:40.516Z
+      - container3:
+          pluginTemplate:
+            id: container3
+            type: widget
+            subtype: ContainerWidget2
+            template:
+              ordered:
+                - _disabledByIndex:
+                    - ''
+                - selectedView: View 1
+                - heightType: auto
+                - currentViewKey: ''
+                - iconByIndex:
+                    array: []
+                - clickable: false
+                - _viewLabels: []
+                - _iconByIndex:
+                    - ''
+                - viewLabels:
+                    array: []
+                - hidden: false
+                - showHeader: true
+                - hoistFetching: true
+                - views:
+                    array: []
+                - showInEditor: false
+                - tooltipText: ''
+                - hiddenByIndex:
+                    array: []
+                - _hiddenByIndex:
+                    - ''
+                - currentViewIndex: null
+                - _hasMigratedNestedItems: true
+                - transition: none
+                - itemMode: static
+                - _tooltipByIndex:
+                    - ''
+                - tooltipByIndex:
+                    array: []
+                - showFooter: false
+                - _viewKeys:
+                    - View 1
+                - events:
+                    ordered: []
+                - _ids:
+                    - ''
+                - viewKeys:
+                    array: []
+                - iconPositionByIndex:
+                    array: []
+                - _iconPositionByIndex:
+                    - ''
+                - hovered: false
+                - loading: false
+                - overflowType: scroll
+                - disabled: false
+                - _labels:
+                    - ''
+                - disabledByIndex:
+                    array: []
+                - maintainSpaceWhenHidden: false
+                - showBody: true
+                - labels:
+                    array: []
+            style:
+              ordered: []
+            position2:
+              position2:
+                row: 21.8
+                height: 6
+                width: 12
+            createdAt: 2023-05-12T18:49:51.596Z
+            updatedAt: 2023-05-12T18:49:51.596Z
+      - containerTitle3:
+          pluginTemplate:
+            id: containerTitle3
+            type: widget
+            subtype: TextWidget2
+            template:
+              ordered:
+                - heightType: auto
+                - horizontalAlign: left
+                - hidden: false
+                - imageWidth: fit
+                - showInEditor: false
+                - verticalAlign: center
+                - tooltipText: ''
+                - value: '#### Force Cancel Multiple Users RAT Orders'
+                - disableMarkdown: false
+                - overflowType: scroll
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                rowGroup: header
+                height: 0.6
+                width: 12
+            createdAt: 2023-05-12T18:49:51.705Z
+            updatedAt: 2023-05-12T18:50:02.024Z
+      - table3:
+          pluginTemplate:
+            id: table3
+            type: widget
+            subtype: TableWidget
+            template:
+              ordered:
+                - showCustomButton: false
+                - sortMappedValue:
+                    ordered: []
+                - _filteredSortedRenderedDataWithTypes: null
+                - heightType: fixed
+                - normalizedData: null
+                - rowHeight: standard
+                - saveChangesDisabled: ''
+                - columnTypeProperties:
+                    ordered: []
+                - columnWidths: []
+                - showSummaryFooter: false
+                - disableRowSelectInteraction: false
+                - columnWidthsMobile: []
+                - hasNextAfterCursor: ''
+                - columnTypeSpecificExtras:
+                    ordered: []
+                - onRowAdded: ''
+                - columnHeaderNames:
+                    ordered:
+                      - content-encoding: OrderID
+                      - content-security-policy: Order Type
+                      - content-type: Time In Force
+                      - date: Quote Size
+                      - expect-ct: Base Size
+                      - referrer-policy: Limit Price
+                      - x-content-type-options: ''
+                - alwaysShowPaginator: false
+                - columnColors:
+                    ordered:
+                      - referrer-policy: ''
+                      - response: ''
+                      - x-permitted-cross-domain-policies: ''
+                      - success: ''
+                      - filledSize: ''
+                      - x-xss-protection: ''
+                      - trace-id: ''
+                      - expect-ct: ''
+                      - userId: ''
+                      - fee: ''
+                      - content-encoding: ''
+                      - orderConfiguration: ''
+                      - endTime: ''
+                      - strict-transport-security: ''
+                      - orderType: ''
+                      - productType: ''
+                      - orderId: ''
+                      - x-frame-options: ''
+                      - assetPair: ''
+                      - productId: ''
+                      - content-security-policy: ''
+                      - postOnly: ''
+                      - content-type: ''
+                      - failureReason: ''
+                      - limitPrice: ''
+                      - x-download-options: ''
+                      - date: ''
+                      - filledValue: ''
+                      - quoteQuantityRemaining: ''
+                      - vary: ''
+                      - baseSize: ''
+                      - status: ''
+                      - x-content-type-options: ''
+                      - transfer-encoding: ''
+                      - createdTime: ''
+                      - Custom Column 1: ''
+                      - side: ''
+                      - Custom Column 2: ''
+                      - Custom Column 3: ''
+                      - timeInForce: ''
+                      - Custom Column 4: ''
+                      - Custom Column 5: ''
+                      - content-length: ''
+                      - baseQuantityRemaining: ''
+                      - Custom Column 6: ''
+                      - Custom Column 7: ''
+                      - quoteSize: ''
+                      - clientOrderId: ''
+                      - connection: ''
+                - columnFrozenAlignments:
+                    ordered: []
+                - allowMultiRowSelect: false
+                - columnFormats:
+                    ordered:
+                      - content-encoding: string
+                - columnRestrictedEditing:
+                    ordered: []
+                - showFilterButton: true
+                - _columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - response: true
+                      - x-permitted-cross-domain-policies: true
+                      - success: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - failureReason: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - _columnSummaryTypes:
+                    ordered: []
+                - _columnsWithLegacyBackgroundColor:
+                    set: []
+                - showAddRowButton: false
+                - _unfilteredSelectedIndex: ''
+                - nextBeforeCursor: ''
+                - columnVisibility:
+                    ordered:
+                      - referrer-policy: true
+                      - response: true
+                      - x-permitted-cross-domain-policies: true
+                      - success: true
+                      - filledSize: true
+                      - x-xss-protection: true
+                      - trace-id: true
+                      - expect-ct: true
+                      - userId: true
+                      - fee: true
+                      - content-encoding: true
+                      - orderConfiguration: true
+                      - endTime: true
+                      - strict-transport-security: true
+                      - orderType: true
+                      - productType: true
+                      - orderId: true
+                      - x-frame-options: true
+                      - assetPair: true
+                      - productId: true
+                      - content-security-policy: true
+                      - postOnly: true
+                      - content-type: true
+                      - failureReason: true
+                      - limitPrice: true
+                      - x-download-options: true
+                      - date: true
+                      - filledValue: true
+                      - quoteQuantityRemaining: true
+                      - vary: true
+                      - baseSize: true
+                      - status: true
+                      - x-content-type-options: true
+                      - transfer-encoding: true
+                      - createdTime: true
+                      - side: true
+                      - timeInForce: true
+                      - content-length: true
+                      - baseQuantityRemaining: true
+                      - quoteSize: true
+                      - clientOrderId: true
+                      - connection: true
+                - selectedPageIndex: '0'
+                - applyDynamicSettingsToColumnOrder: false
+                - rowColor:
+                    array: []
+                - actionButtonColumnName: Actions
+                - resetAfterSave: true
+                - filterStackType: and
+                - downloadRawData: true
+                - showFetchingIndicator: true
+                - serverPaginated: false
+                - data: '{{ query3.data.response }}'
+                - displayedData: null
+                - actionButtons: []
+                - actionButtonSelectsRow: true
+                - selectRowByDefault: true
+                - defaultSortByColumn: ''
+                - paginationOffset: 0
+                - columnAlignment:
+                    ordered:
+                      - content-encoding: left
+                - columnSummaries:
+                    object: {}
+                - showBoxShadow: true
+                - sortedDesc: false
+                - customButtonName: ''
+                - columnMappersRenderAsHTML:
+                    ordered: []
+                - showRefreshButton: false
+                - pageSize: 5
+                - useDynamicColumnSettings: false
+                - actionButtonPosition: left
+                - dynamicRowHeights: false
+                - bulkUpdateAction: ''
+                - afterCursor: ''
+                - onCustomButtonPressQueryName: ''
+                - changeSet:
+                    object: {}
+                - sortedColumn: ''
+                - _columnSummaryValues:
+                    ordered: []
+                - checkboxRowSelect: true
+                - _compatibilityMode: true
+                - showColumnBorders: true
+                - clearSelectionLabel: Clear selection
+                - _renderedDataWithTypes: null
+                - columnAllowOverflow:
+                    ordered: []
+                - beforeCursor: ''
+                - serverPaginationType: limitOffsetBased
+                - onRowSelect: ''
+                - showDownloadButton: true
+                - selectedIndex: null
+                - defaultSortDescending: false
+                - _sortedDisplayedDataIndices: null
+                - dynamicColumnSettings: null
+                - totalRowCount: ''
+                - recordUpdates:
+                    array: []
+                - newRow: null
+                - emptyMessage: No orders found
+                - columnEditable:
+                    ordered:
+                      - strict-transport-security: false
+                      - transfer-encoding: false
+                      - x-xss-protection: false
+                      - Custom Column 1: false
+                      - Custom Column 2: false
+                      - Custom Column 3: false
+                      - Custom Column 4: false
+                      - Custom Column 5: false
+                      - Custom Column 6: false
+                      - Custom Column 7: false
+                - _viewerColumnSummaryTypes:
+                    object: {}
+                - filters:
+                    array: []
+                - displayedDataIndices: null
+                - disableSorting:
+                    ordered: []
+                - columnMappers:
+                    ordered: []
+                - showClearSelection: false
+                - doubleClickToEdit: false
+                - overflowType: scroll
+                - _reverseSortedDisplayedDataIndices: null
+                - showTableBorder: true
+                - selectedCell:
+                    object:
+                      index: null
+                      data: null
+                      columnName: null
+                - columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - success
+                    - failureReason
+                    - response
+                - defaultSelectedRow: first
+                - freezeActionButtonColumns: false
+                - sort: null
+                - _columns:
+                    - orderId
+                    - clientOrderId
+                    - status
+                    - productType
+                    - productId
+                    - userId
+                    - orderConfiguration
+                    - baseSize
+                    - quoteSize
+                    - orderType
+                    - timeInForce
+                    - side
+                    - createdTime
+                    - limitPrice
+                    - endTime
+                    - postOnly
+                    - fee
+                    - assetPair
+                    - filledSize
+                    - filledValue
+                    - quoteQuantityRemaining
+                    - baseQuantityRemaining
+                    - success
+                    - failureReason
+                    - response
+                - sortByRawValue:
+                    ordered: []
+                - calculatedColumns: []
+                - selectedRow:
+                    object:
+                      index: null
+                      data: null
+                - showPaginationOnTop: false
+                - _reverseDisplayedDataIndices: null
+                - nextAfterCursor: ''
+                - useCompactMode: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 4
+                height: 8.6
+                width: 12
+            createdAt: 2023-05-12T18:49:51.743Z
+            updatedAt: 2023-05-25T01:38:01.698Z
+      - button3:
+          pluginTemplate:
+            id: button3
+            type: widget
+            subtype: ButtonWidget2
+            template:
+              ordered:
+                - horizontalAlign: stretch
+                - clickable: false
+                - iconAfter: ''
+                - submitTargetId: null
+                - hidden: false
+                - text: Force Cancel Orders
+                - showInEditor: false
+                - tooltipText: ''
+                - styleVariant: solid
+                - submit: false
+                - iconBefore: ''
+                - events:
+                    - ordered:
+                        - method: trigger
+                        - enabled: '{{ textArea3.value != ""}}'
+                        - params:
+                            ordered: []
+                        - targetId: null
+                        - pluginId: query3
+                        - waitType: debounce
+                        - event: click
+                        - type: datasource
+                        - waitMs: '0'
+                - loading: false
+                - loaderPosition: auto
+                - disabled: '{{ textArea3.value == ""}}'
+                - maintainSpaceWhenHidden: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                row: 2.4
+                height: 1.2
+            createdAt: 2023-05-12T18:49:51.880Z
+            updatedAt: 2023-05-12T18:50:26.183Z
+      - textArea3:
+          pluginTemplate:
+            id: textArea3
+            type: widget
+            subtype: TextAreaWidget
+            template:
+              ordered:
+                - spellCheck: false
+                - readOnly: false
+                - autoResize: true
+                - showCharacterCount: false
+                - autoComplete: false
+                - maxLength: null
+                - hidden: false
+                - customValidation: ''
+                - hideValidationMessage: false
+                - minLines: 2
+                - validationMessage: ''
+                - showInEditor: false
+                - pattern: ''
+                - tooltipText: ''
+                - labelAlign: left
+                - formDataKey: '{{ self.id }}'
+                - value: ''
+                - labelCaption: ''
+                - labelWidth: '33'
+                - autoFill: ''
+                - placeholder: |-
+                    000-000-0000
+                    111-111-1111
+                    222-222-2222
+                - label: Order UUIDs (enter each on new line)
+                - _validate: false
+                - labelWidthUnit: '%'
+                - invalid: false
+                - minLength: null
+                - inputTooltip: ''
+                - events:
+                    ordered: []
+                - autoCapitalize: none
+                - maxLines: '100'
+                - loading: false
+                - disabled: false
+                - labelPosition: top
+                - labelWrap: false
+                - maintainSpaceWhenHidden: false
+                - required: false
+            style:
+              ordered: []
+            position2:
+              position2:
+                container: container3
+                height: 1
+                width: 5
+            createdAt: 2023-05-12T18:49:51.957Z
+            updatedAt: 2023-05-12T18:49:51.957Z
+      - query3:
+          pluginTemplate:
+            id: query3
+            type: datasource
+            subtype: GraphQLQuery
+            resourceName: 356abdec-42a3-4f41-b31e-6b978c9afdf5
+            template:
+              ordered:
+                - queryRefreshTime: ''
+                - paginationLimit: ''
+                - body: |
+
+
+                    mutation forceCancelRATOrders ($orderIDs: [String]!)  {
+                      forceCancelRATOrders(input: {
+                    orderIds: $orderIDs}) {
+                          response {
+                            orderId
+                            failureReason
+                            success
+                          }
+                      }
+                    }
+                - lastReceivedFromResourceAt: null
+                - queryDisabledMessage: ''
+                - servedFromCache: false
+                - offlineUserQueryInputs: ''
+                - successMessage: ''
+                - queryDisabled: ''
+                - playgroundQuerySaveId: latest
+                - workflowParams: null
+                - resourceNameOverride: ''
+                - runWhenModelUpdates: false
+                - paginationPaginationField: ''
+                - headers: '[]'
+                - workflowRunId: null
+                - showFailureToaster: true
+                - paginationEnabled: false
+                - query: ''
+                - playgroundQueryUuid: ''
+                - playgroundQueryId: null
+                - error: null
+                - workflowRunBodyType: raw
+                - privateParams: []
+                - runWhenPageLoadsDelay: ''
+                - data: null
+                - importedQueryInputs:
+                    ordered: []
+                - isImported: false
+                - graphQLVariables: >-
+                    [{"key":"orderIDs","value":"{{ textArea3.value != \"\" ?
+                    textArea3.value.split(\"\\n\") : [] }}"}]
+                - showSuccessToaster: true
+                - cacheKeyTtl: ''
+                - requestSentTimestamp: null
+                - cookies: ''
+                - metadata: null
+                - workflowActionType: null
+                - queryRunTime: null
+                - changesetObject: ''
+                - errorTransformer: >-
+                    //Use the variables data, metadata, and errors to reference
+                    these fields from your query's results
+
+                    if (Array.isArray(errors) && errors.length > 0) {
+                      return errors[0].message;
+                    } else {
+                      return false
+                    }
+                        
+                - finished: null
+                - confirmationMessage: null
+                - isFetching: false
+                - changeset: ''
+                - rawData: null
+                - queryTriggerDelay: '0'
+                - resourceTypeOverride: ''
+                - graphQLErrors: null
+                - watchedParams: []
+                - enableErrorTransformer: false
+                - showLatestVersionUpdatedWarning: false
+                - paginationDataField: ''
+                - timestamp: 0
+                - importedQueryDefaults:
+                    ordered: []
+                - enableTransformer: true
+                - showUpdateSetValueDynamicallyToggle: true
+                - runWhenPageLoads: false
+                - transformer: >-
+                    // type your code here
+
+                    // example: return formatDataAsArray(data).filter(row =>
+                    row.quantity > 20)
+
+                    return data.forceCancelRATOrders
+                - events: []
+                - queryTimeout: '10000'
+                - workflowId: null
+                - requireConfirmation: false
+                - type: POST
+                - queryFailureConditions: ''
+                - changesetIsObject: false
+                - enableCaching: false
+                - allowedGroups: []
+                - workflowBlockPluginId: null
+                - bodyType: raw
+                - offlineQueryType: None
+                - queryThrottleTime: '750'
+                - updateSetValueDynamically: false
+                - notificationDuration: ''
+            createdAt: 2023-05-12T18:50:20.882Z
+            updatedAt: 2023-10-26T16:03:24.927Z
+      - $main:
+          pluginTemplate:
+            id: $main
+            type: frame
+            subtype: Frame
+            template:
+              ordered:
+                - type: main
+            style:
+              ordered: []
+            createdAt: 2023-10-26T16:02:59.578Z
+            updatedAt: 2023-10-26T16:02:59.578Z
+  version: 3.2.3
